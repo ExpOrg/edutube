@@ -1,0 +1,207 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);/* Color name declaration */
+
+/* Navbar customization */
+
+.navbar {
+  margin-bottom: inherit !important;
+}
+
+.navbar-form {
+  width: 40% !important;
+  margin-left: 20px;
+  position: relative;
+}
+
+.navbar-form .navbar-search-input {
+  width: 100%;
+  border: solid 1px #cccccc;
+  background: #efefef;
+  border-radius: 4px;
+  padding: 5px 40px 5px 15px;
+  outline: none;
+}
+
+.navbar-form .navbar-search-input:hover {
+  outline: none;
+}
+
+.navbar-form:before {
+  content: "\F002";
+  font-family: 'FontAwesome';
+  top: 4px;
+  right: 10px;
+  position: absolute;
+  color: #333333;
+}
+
+.flipkart-navbar-input {
+  padding: 11px 16px;
+  border-radius: 2px 0 0 2px;
+  border: 0 none;
+  outline: 0 none;
+  font-size: 15px;
+}
+
+.flipkart-navbar-button {
+  background-color: #ffe11b;
+  border: 1px solid #ffe11b;
+  border-radius: 0 2px 2px 0;
+  color: #565656;
+  padding: 10px 0;
+  height: 43px;
+  cursor: pointer;
+}
+
+/* Slider design */
+
+.carousel-inner {
+  max-height: 450px;
+}
+
+/* Largest community */
+
+#largest-community {
+  background: #fff;
+  -webkit-box-shadow: 2px 2px 4px #ccc, 3px 3px 2px #ddd, 2px 2px 1px #eee;
+  box-shadow: 2px 2px 4px #ccc, 3px 3px 2px #ddd, 2px 2px 1px #eee;
+}
+
+.largest-brand-wrap {
+  padding-top: 20px;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.largest-brand-wrap .brand-row .brand-column {
+  margin-bottom: 10px;
+}
+
+.brand-item .item-img {
+  float: left;
+  margin-right: 20px;
+}
+
+.brand-item .item-text {
+  float: left;
+}
+
+.brand-item .item-text h4 {
+  margin-bottom: 0;
+}
+
+.landing-top-section {
+  background: #f1f1f1;
+}
+
+/* Learn-anytime */
+
+.learn-anytime .learn-anytime-row .left-col {
+  padding-left: 105px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  min-height: 310px;
+}
+
+.learn-anytime .learn-anytime-row .right-col {
+  min-height: 310px;
+  background: url("/images/tab.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Skill */
+
+.skill h2 {
+  margin-top: 55px;
+  margin-bottom: 25px;
+}
+
+.skill-item-wrap .skill-row {
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.skill-item-wrap .skill-row .skill-col .item {
+  border: 1px solid #eee;
+  padding-bottom: 25px;
+}
+
+#find-note-section {
+  background: #f1f1f1;
+  padding: 60px 75px;
+}
+
+#find-note-section .find-note-container {
+  background: #fff;
+  -webkit-box-shadow: 0px 0px 5px #cccccc;
+          box-shadow: 0px 0px 5px #cccccc;
+  border-radius: 10px;
+  padding: 40px;
+}
+
+/* Button design for edutube */
+
+.primary-btn {
+  color: #fff !important;
+  font-size: 15px;
+  background-color: #ef294a;
+  border-radius: 3px;
+  padding: 5px 24px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+}
+
+.primary-btn:hover {
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 2px solid #ef294a;
+}
+
+.btn-size-2x {
+  min-width: 180px;
+  min-height: 40px;
+  display: inline-block;
+  text-align: center;
+  line-height: 27px;
+}
+
+/* Search button */
+
+.search-group-btn .search-btn-input {
+  padding: 8px 15px;
+  border-radius: 3px 0 0 3px;
+  border: 0 none;
+  outline: 0 none;
+  font-size: 15px;
+  border: 1px solid #e2e2e2;
+  border-right: 0;
+}
+
+.search-group-btn .group-btn {
+  background-color: #ef294a;
+  border: 1px solid #ef294a;
+  border-radius: 0 3px 3px 0;
+  color: #fff;
+  padding: 1px 7px;
+  text-decoration: none;
+  cursor: pointer;
+  line-height: 23px;
+}
+
+.navbar-laravel {
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.auth-modal-header,
+.auth-modal-footer {
+  background: #F1F1F1;
+  padding: 0.7rem 1rem !important;
+}
+
+#registration-modal .form-group label.input-label,
+#login-modal .form-group label.input-label {
+  display: block;
+}
+

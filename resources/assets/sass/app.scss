@@ -1,0 +1,28 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+@import "home";
+@import "public";
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.auth-modal-header,
+.auth-modal-footer {
+	background: #F1F1F1;
+	padding: 0.7rem 1rem !important;
+}
+
+#registration-modal,
+#login-modal {
+	.form-group {
+		label.input-label {
+          display: block;
+		}
+	}
+}

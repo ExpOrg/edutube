@@ -1,0 +1,49 @@
+/* Button design for edutube */
+.primary-btn {
+  color: $white !important;
+  font-size: 15px;
+  background-color: $pink;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 5px 24px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+  &:hover {
+    color: $white;
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom: 2px solid $pink;
+  }
+}
+
+//Medium button
+.btn-size-2x {
+  min-width: 180px;
+  min-height: 40px;
+  display: inline-block;
+  text-align: center;
+  line-height: 27px;
+}
+
+/* Search button */
+.search-group-btn {
+  .search-btn-input {
+    padding: 8px 15px;
+    border-radius: 3px 0 0 3px;
+    border: 0 none;
+    outline: 0 none;
+    font-size: 15px;
+    border: 1px solid $boder-color;
+    border-right: 0;
+  }
+  .group-btn {
+    background-color: $pink;
+    border: 1px solid $pink;
+    border-radius: 0 3px 3px 0;
+    color: $white;
+    padding: 1px 7px;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 23px;
+  }
+}
