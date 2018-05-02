@@ -1,18 +1,67 @@
+.hints {
+  font-size: 14px;
+  font-family: 'Railway';
+}
+
 /* Button design for edutube */
 .primary-btn {
   color: $white !important;
-  font-size: 15px;
+  font-weight: bold !important;
   background-color: $pink;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  padding: 5px 24px;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.25) !important;
   &:hover {
     color: $white;
     cursor: pointer;
     text-decoration: none;
-    border-bottom: 2px solid $pink;
+    border-bottom: 2px solid $pink !important;
+  }
+}
+
+.default-btn {
+  color: #333333 !important;
+  font-weight: bold !important;
+  background-color: $secondary-color;
+  border-bottom: 2px solid rgba(200, 200, 200, 0.25) !important;
+  &:hover {
+    color: #333333;
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom: 2px solid $secondary-color !important;
+  }
+}
+
+.facebook-btn {
+  color: #ffffff !important;
+  background-color: #494492;
+  border-bottom: 2px solid #3E3979 !important;
+  text-align: left !important;
+  &:hover {
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom: 2px solid #3E3979 !important;
+  }
+  .icon {
+    display: inline-block;
+    margin-right: 25px;
+    font-weight: bold;
+  }
+}
+
+.google-btn {
+  color: #333333 !important;
+  background-color: $secondary-color;
+  border-bottom: 2px solid rgba(200, 200, 200, 0.25) !important;
+  text-align: left !important;
+  &:hover {
+    color: #333333;
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom: 2px solid $secondary-color !important;
+  }
+  .icon {
+    display: inline-block;
+    margin-right: 25px;
+    font-weight: bold;
   }
 }
 

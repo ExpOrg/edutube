@@ -140,3 +140,105 @@
     padding: 40px;
   }
 }
+
+/* Login and registration modal and content design */
+
+#registration-modal,
+#login-modal {
+  .modal-dialog {
+    max-width: 400px !important;
+  }
+  .modal-content {
+    max-width: 400px;
+  }
+}
+
+label {
+  &.input-label {
+    display: block;
+    font-family: 'Raleway';
+    font-size: 14px;
+    color: #333333;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+}
+
+.auth-modal-header,
+.auth-modal-footer {
+  background: #F1F1F1;
+  padding: 15px 10px !important;
+  font-family: 'Raleway';
+  .modal-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: auto !important;
+  }
+}
+
+.auth-modal-footer {
+  font-size: 16px;
+  text-align: center;
+  display: block !important;
+  border-radius: 0 0 4px 4px;
+  a {
+    color: $pink;
+    font-weight: bold;
+  }
+}
+
+.group-input {
+  width: 100%;
+  position: relative;
+  background: #F1F1F1;
+  border: solid 1px #D8D8D8;
+  border-radius: 4px;
+  .input-icon {
+    width: 40px;
+    padding: 7px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    text-align: center;
+    color: #999999;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      bottom: 5px;
+      right: 1px;
+      width: 1px;
+      background: #D8D8D8;
+    }
+  }
+  .input-inner {
+     border: none;
+     display: inline-block;
+     background: transparent;
+     padding: 7px;
+     width: calc(100% - 45px);
+     vertical-align: top;
+     &:hover,
+     &:focus {
+      outline: none;
+     }
+  }
+}
+
+.or-text {
+  margin: 10px 0 20px 0;
+  height: 2px;
+  background: $secondary-color;
+  position: relative;
+  &:before {
+    position: absolute;
+    content: 'OR';
+    border-radius: 50px;
+    background: #ffffff;
+    top: -8px;
+    left: 44%;
+    padding: 0px 7px 4px 7px;
+    color: #555555;
+    font-size: 12px;
+  }
+}

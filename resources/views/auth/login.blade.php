@@ -8,45 +8,59 @@
         </button>
       </div>
       <div class="modal-body">
-        <div id="edutube-login-form" class="form-wrapper sign-in-wrap">
+        <div id="edutube-register-form" class="form-wrapper sign-in-wrap">
             {!! Form::open(['route' => 'login', 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'POST'] ) !!}
 
                 {{ csrf_field() }}
 
                 <div class="form-group">
-                <label class="input-label"> Email: </label>
-                 <div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">@</span>
-  </div>
-  <input type="text" class="form-control" placeholder="Username" name="name">
-</div>
+                 <label class="input-label"> Email: </label>
+                 <div class="group-input">
+                  <span class='input-icon'> <i class='fa fa-user-o'></i></span>
+                  <input type="email" class="input-inner" name="email">
+                  </div>
                 </div>
 
                 <div class="form-group">
-                <label class="input-label"> Password: </label>
-                <div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">@</span>
-  </div>
-  <input type="text" class="form-control" placeholder="Username" name="name">
-</div>
-                </div>
+                 <label class="input-label"> 
+                   Password: 
+                   <span style='font-weight: normal;' class='hints pull-right'> Forgot password? </span>
+                 </label>
+                 <div class="group-input">
+                  <span class='input-icon'> <i class='fa fa-lock'></i></span>
+                  <input type="password" class="input-inner" name="password">
+                  </div>
+                </div>             
 
-                <div class="form-group">
-                  <label for="user_remember_me">
-                    <input type="checkbox"> Remember me. 
+                <input type="submit" class="btn btn-block primary-btn" name="submit" value="Sign up">
+
+                <div style="margin-top: 5px;">
+                  <label for="remember-me">
+                    <input type="checkbox" id='remember-me' name='remember_me' value='1'> 
+                    <span class='hints'> Keep me signed in. </span> 
                   </label>
                 </div>
 
-                <div class="form-group">
-                  <input type="submit" class="btn btn-black btn-block btn-warning" value="SignIn">
+                <div class='or-text'>
                 </div>
+
+                <div class="form-group">
+                  <a href="#" class="btn btn-block facebook-btn">
+                    <i class="fa fa-facebook-f icon"></i> Sign in with Facebook
+                  </a>
+                </div>
+
+                <div class="form-groupx">
+                  <a href="#" class="btn btn-block google-btn">
+                    <i class="fa fa-google icon"></i> Sign in with Google
+                  </a>
+                </div>
+
             {!! Form::close() !!}
           </div>
       </div>
       <div class="modal-footer auth-modal-footer">
-        Don't have an account? <a href="#"> Sign up </a>
+        Don not have an account? <a href="#"> Sign up </a>
       </div>
     </div>
   </div>

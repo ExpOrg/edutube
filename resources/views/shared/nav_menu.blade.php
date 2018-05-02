@@ -56,17 +56,17 @@
           <form class="form-inline mr-auto navbar-form">
             <input class="navbar-search-input" placeholder="Search..." name="">
           </form>
-          <ul class="navbar-nav navbar-right">
+          <ul class="navbar-nav navbar-right right-menu-container">
             <li class="nav-item"><a href="#" class='nav-link'>Live Classes</a></li>
             <li class="nav-item"><a href="#" class='nav-link'>Become a Tutor</a></li>
             <li class="nav-item">
               <a href="#" class='nav-link'><i class="fa fa-shopping-cart"></i></a>
             </li>
             <li class="nav-item">
-              <a data-target="#login-modal" data-toggle="modal" class="btn btn-light">Sign in</a>
+              <a data-target="#login-modal" data-toggle="modal" class="btn default-btn">Sign in</a>
             </li>
             <li class="nav-item">
-              <a data-target="#registration-modal" data-toggle="modal" class="primary-btn nav-link">Sign up</a>
+              <a data-target="#registration-modal" data-toggle="modal" class="primary-btn btn">Sign up</a>
             </li>
           </ul>
         </div><!-- /.navbar-collapse -->

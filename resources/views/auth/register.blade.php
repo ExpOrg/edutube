@@ -14,47 +14,55 @@
                 {{ csrf_field() }}
 
                 <div class="form-group">
-                <label class="input-label"> Full Name: </label>
-                 <div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">@</span>
-  </div>
-  <input type="text" class="form-control" placeholder="Username" name="name">
-</div>
+                 <label class="input-label"> Full Name: </label>
+                 <div class="group-input">
+                  <span class='input-icon'> <i class='fa fa-user-o'></i></span>
+                  <input type="text" class="input-inner" name="name">
+                  </div>
                 </div>
 
                 <div class="form-group">
-                <label class="input-label"> Email: </label>
-                <div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">@</span>
-  </div>
-  <input type="text" class="form-control" placeholder="Email" name="email">
-</div>
+                 <label class="input-label"> Email: </label>
+                 <div class="group-input">
+                  <span class='input-icon'> <i class='fa fa-envelope-o'></i></span>
+                  <input type="text" class="input-inner" name="email">
+                  </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="user_remember_me">
-                    <%= f.check_box :remember_me %>
-                    Remember Me
+                 <label class="input-label"> Password: </label>
+                 <div class="group-input">
+                  <span class='input-icon'> <i class='fa fa-lock'></i></span>
+                  <input type="password" class="input-inner" name="password">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                 <label class="input-label"> Confirm Password: </label>
+                 <div class="group-input">
+                  <span class='input-icon'> <i class='fa fa-lock'></i></span>
+                  <input type="password" class="input-inner" name="confirm_password">
+                  </div>
+                </div>                
+
+                <div>
+                  <label for="parent">
+                    <input type="checkbox" id='parent' name='parent' value='1'> 
+                    <span class='hints'> Click here if you are parent </span> 
                   </label>
                 </div>
 
-                <div class="form-group">
-                  <%= f.submit 'Log In', class: 'btn-yellow' %>
+                <input type="submit" class="btn btn-block primary-btn" name="submit" value="Sign up">
 
-                  <input type="button" class="btn-black btn-cancel" name="cancel" value="Cancel" data-dismiss="modal">
-                </div>
-                <div class="form-group others-link">
-                  <a href="#forgot-password-form" class="toggle-links link-forgot-password" title="Forgot Password">
-                    Lost Your Password?
-                  </a>
-                </div>
+                <span class='hints'> 
+                  By signing up you are agree to our 
+                  <a href='#'> Terms & Conditions </a>
+                </span> 
             {!! Form::close() !!}
           </div>
       </div>
       <div class="modal-footer auth-modal-footer">
-        Don't have an account? <a href="#"> Sign up </a>
+        Have an account? <a href="#"> Sign in </a>
       </div>
     </div>
   </div>

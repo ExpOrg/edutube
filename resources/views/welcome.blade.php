@@ -91,14 +91,14 @@
             <div class="item">
               <h2>ACADEMIC COURSES</h2>
               <p>Courses with details curriculum from expert tutors.</p>
-              <a href="" class="primary-btn">Discover</a>
+              <a href="" class="primary-btn btn">Discover</a>
             </div>
           </div>
           <div class="col-md-6 col-xs-12 skill-col">
             <div class="item">
               <h2>SPECIAL COURSES</h2>
               <p>Special courses helps students/professionals to develop their skills.</p>
-              <a href="" class="primary-btn">Discover</a>
+              <a href="" class="primary-btn btn">Discover</a>
             </div>
           </div>
         </div>
