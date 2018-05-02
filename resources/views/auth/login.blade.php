@@ -9,7 +9,7 @@
       </div>
       <div class="modal-body">
         <div id="edutube-register-form" class="form-wrapper sign-in-wrap">
-            {!! Form::open(['route' => 'login', 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'POST'] ) !!}
+            {!! Form::open(['route' => 'login', 'class' => 'form-horizontal edutube-auth-form', 'role' => 'form', 'method' => 'POST'] ) !!}
 
                 {{ csrf_field() }}
 
@@ -24,7 +24,11 @@
                 <div class="form-group">
                  <label class="input-label"> 
                    Password: 
-                   <span style='font-weight: normal;' class='hints pull-right'> Forgot password? </span>
+                   <span style='font-weight: normal;' class='hints pull-right'> 
+                     <a href='#' data-target="#forgot-password-modal" data-toggle="modal">
+                       Forgot password? 
+                     </a>
+                   </span>
                  </label>
                  <div class="group-input">
                   <span class='input-icon'> <i class='fa fa-lock'></i></span>
@@ -60,7 +64,7 @@
           </div>
       </div>
       <div class="modal-footer auth-modal-footer">
-        Don not have an account? <a href="#"> Sign up </a>
+        Don not have an account? <a href='#' data-target="#registration-modal" data-toggle="modal"> Sign up </a>
       </div>
     </div>
   </div>
@@ -68,26 +72,8 @@
 
 <script type="text/javascript">
     $(function () {
-       $('#edutube-login-form').submit(function(e) {
-         e.preventDefault();
-         $.ajax({
-          url: '/login',
-          type: 'post',
-          dataType: 'JSON',
-          data: {email: 'nazrulku07@gmail.com', Password: '1234', _token: '{{csrf_token()}}'},
-          success: function(response) {
-            console.log(response);
-            if(response.auth) {
-alert("Success");
-            }
-            else {
-alert("Invalid email or password");
-            }
-          },
-          error: function(e) {
-            console.log(e.responseText);
-          }
-         })
+       $('#login-modal').on('show.bs.modal', function (e) {
+         $('#registration-modal').modal('hide');
        });
     });
 </script>

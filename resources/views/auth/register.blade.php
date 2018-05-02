@@ -9,7 +9,7 @@
       </div>
       <div class="modal-body">
         <div id="edutube-register-form" class="form-wrapper sign-in-wrap">
-            {!! Form::open(['route' => 'register', 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'POST'] ) !!}
+            {!! Form::open(['route' => 'register', 'class' => 'edutube-auth-form form-horizontal', 'role' => 'form', 'method' => 'POST'] ) !!}
 
                 {{ csrf_field() }}
 
@@ -62,19 +62,16 @@
           </div>
       </div>
       <div class="modal-footer auth-modal-footer">
-        Have an account? <a href="#"> Sign in </a>
+        Have an account? <a href='#' data-target="#login-modal" data-toggle="modal"> Sign in </a>
       </div>
     </div>
   </div>
 </div>
 
 <script type="text/javascript">
-    //$(function () {
-      //  $('.toggle-links').click(function () {
-        //    target = $(this).attr('href');
-          //  $(this).parents('.form-wrapper').addClass('hidden');
-          //  $(target).removeClass('hidden');
-          //  return false;
-        //});
-    //});
+    $(function () {
+      $('#registration-modal').on('show.bs.modal', function (e) {
+         $('#login-modal').modal('hide');
+       });
+    });
 </script>

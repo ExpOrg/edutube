@@ -111,20 +111,17 @@
 }
 
 /* Skill */
-.skill {
-  h2 {
-    margin-top: 55px;
-    margin-bottom: 25px;
-  }
-}
 .skill-item-wrap {
   .skill-row {
     margin-left: 150px;
     margin-right: 150px;
     .skill-col {
       .item {
+        padding: 40px 25px;
+        background: $secondary-color;
         border: 1px solid #eee;
         padding-bottom: 25px;
+        box-shadow: 0 0 3px #cccccc;
       }
     }
   }
@@ -141,10 +138,29 @@
   }
 }
 
+#become-tutor-section {
+  padding: 60px 75px;
+  background-image: url('/images/slider2.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #ffffff;
+}
+
+#help-center-section {
+  padding: 60px 75px;
+}
+
+#master-skill {
+  padding: 60px 75px;
+}
+
 /* Login and registration modal and content design */
 
 #registration-modal,
-#login-modal {
+#login-modal,
+#forgot-password-modal,
+#reset-password-modal,
+#reset-password-modal {
   .modal-dialog {
     max-width: 400px !important;
   }
@@ -173,6 +189,10 @@ label {
     font-size: 18px;
     font-weight: 700;
     margin: auto !important;
+  }
+  .forgot-password-hints {
+    font-size: 13.5px;
+    text-align: justify;
   }
 }
 
@@ -240,5 +260,61 @@ label {
     padding: 0px 7px 4px 7px;
     color: #555555;
     font-size: 12px;
+  }
+}
+
+.footer-container {
+  footer {
+    padding: 60px 75px;
+    background: $secondary-color;
+  }
+  .footer-bottom-section {
+    background: #ffffff;
+    padding: 6px 20px;
+    .left-section {
+      float: left;
+      color: #999999;
+      font-size: 13px;
+      padding-top: 4px;
+    }
+    .right-section {
+      float: right;
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li {
+          line-height: 16px;
+          position: relative;
+          display: inline-block;
+          a {
+            position: relative;
+            color: #999999;
+            text-decoration: none;
+            padding: 4px;
+            font-size: 13px;
+            &:hover {
+              text-decoration: none;
+            }
+            &:before {
+              content: '';
+              position: absolute;
+              border-right: solid 1px #aaaaaa;
+              right: -2px;
+              top: 5px;
+              bottom: 5px;
+            } 
+          }
+          &:last-child {
+            a {
+              &:before {
+                content: '';
+                border-right: none;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

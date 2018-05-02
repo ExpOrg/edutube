@@ -1,46 +1,46 @@
-@extends('layouts.app')
+<div class="modal fade" id="forgot-password-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header auth-modal-header">
+        <h4 class="modal-title">Password assistance</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="edutube-forgot-password-form" class="form-wrapper sign-in-wrap">
+            {!! Form::open(['route' => 'login', 'class' => 'form-horizontal edutube-auth-form', 'role' => 'form', 'method' => 'POST'] ) !!}
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+                {{ csrf_field() }}
+                <p style="line-height: 20px;"> 
+                  Insert the email address associated to your Edutube account 
+                </p>
+                <div class="form-group">
+                 <label class="input-label"> Email: </label>
+                 <div class="group-input">
+                  <span class='input-icon'> <i class='fa fa-envelope-o'></i></span>
+                  <input type="email" class="input-inner" name="email">
+                  </div>
+                </div>            
 
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('password.email') }}">
-                        {{ csrf_field() }}
+                <input type="submit" class="btn btn-block primary-btn" name="submit" value="Submit">
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Send Password Reset Link
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+            {!! Form::close() !!}
+          </div>
+      </div>
+      <div class="modal-footer auth-modal-footer">
+        <div class="forgot-password-hints">
+        Has you email address changed? If you no longer use the email address associated with your Edutube account, you may contact <a href='#'> Customer Service </a> for help restoring access to your account.
         </div>
+      </div>
     </div>
+  </div>
 </div>
-@endsection
+
+<script type="text/javascript">
+    $(function () {
+       $('#forgot-password-modal').on('show.bs.modal', function (e) {
+         $('#login-modal').modal('hide');
+       });
+    });
+</script>

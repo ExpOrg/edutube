@@ -111,19 +111,18 @@
 
 /* Skill */
 
-.skill h2 {
-  margin-top: 55px;
-  margin-bottom: 25px;
-}
-
 .skill-item-wrap .skill-row {
   margin-left: 150px;
   margin-right: 150px;
 }
 
 .skill-item-wrap .skill-row .skill-col .item {
+  padding: 40px 25px;
+  background: #f1f1f1;
   border: 1px solid #eee;
   padding-bottom: 25px;
+  -webkit-box-shadow: 0 0 3px #cccccc;
+          box-shadow: 0 0 3px #cccccc;
 }
 
 #find-note-section {
@@ -139,15 +138,37 @@
   padding: 40px;
 }
 
+#become-tutor-section {
+  padding: 60px 75px;
+  background-image: url("/images/slider2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #ffffff;
+}
+
+#help-center-section {
+  padding: 60px 75px;
+}
+
+#master-skill {
+  padding: 60px 75px;
+}
+
 /* Login and registration modal and content design */
 
 #registration-modal .modal-dialog,
-#login-modal .modal-dialog {
+#login-modal .modal-dialog,
+#forgot-password-modal .modal-dialog,
+#reset-password-modal .modal-dialog,
+#reset-password-modal .modal-dialog {
   max-width: 400px !important;
 }
 
 #registration-modal .modal-content,
-#login-modal .modal-content {
+#login-modal .modal-content,
+#forgot-password-modal .modal-content,
+#reset-password-modal .modal-content,
+#reset-password-modal .modal-content {
   max-width: 400px;
 }
 
@@ -172,6 +193,12 @@ label.input-label {
   font-size: 18px;
   font-weight: 700;
   margin: auto !important;
+}
+
+.auth-modal-header .forgot-password-hints,
+.auth-modal-footer .forgot-password-hints {
+  font-size: 13.5px;
+  text-align: justify;
 }
 
 .auth-modal-footer {
@@ -247,9 +274,75 @@ label.input-label {
   font-size: 12px;
 }
 
+.footer-container footer {
+  padding: 60px 75px;
+  background: #f1f1f1;
+}
+
+.footer-container .footer-bottom-section {
+  background: #ffffff;
+  padding: 6px 20px;
+}
+
+.footer-container .footer-bottom-section .left-section {
+  float: left;
+  color: #999999;
+  font-size: 13px;
+  padding-top: 4px;
+}
+
+.footer-container .footer-bottom-section .right-section {
+  float: right;
+}
+
+.footer-container .footer-bottom-section .right-section ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-container .footer-bottom-section .right-section ul li {
+  line-height: 16px;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-container .footer-bottom-section .right-section ul li a {
+  position: relative;
+  color: #999999;
+  text-decoration: none;
+  padding: 4px;
+  font-size: 13px;
+}
+
+.footer-container .footer-bottom-section .right-section ul li a:hover {
+  text-decoration: none;
+}
+
+.footer-container .footer-bottom-section .right-section ul li a:before {
+  content: '';
+  position: absolute;
+  border-right: solid 1px #aaaaaa;
+  right: -2px;
+  top: 5px;
+  bottom: 5px;
+}
+
+.footer-container .footer-bottom-section .right-section ul li:last-child a:before {
+  content: '';
+  border-right: none;
+}
+
 .hints {
   font-size: 14px;
   font-family: 'Railway';
+}
+
+.primary-header {
+  font-weight: bold;
+  font-size: 22px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
 }
 
 /* Button design for edutube */

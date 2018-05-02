@@ -84,19 +84,21 @@
   </div>
   <section id="master-skill">
     <div class="skill">
-      <h2 class="text-center">MASTER YOUR SKILLS</h2>
+      <h2 class="text-center primary-header" style="margin: 0 0 40px 0;">
+        MASTER YOUR SKILLS
+      </h2>
       <div class="skill-item-wrap">
         <div class="row skill-row text-center">
           <div class="col-md-6 col-xs-12 skill-col">
             <div class="item">
-              <h2>ACADEMIC COURSES</h2>
+              <h2 class='primary-header'>ACADEMIC COURSES</h2>
               <p>Courses with details curriculum from expert tutors.</p>
               <a href="" class="primary-btn btn">Discover</a>
             </div>
           </div>
           <div class="col-md-6 col-xs-12 skill-col">
             <div class="item">
-              <h2>SPECIAL COURSES</h2>
+              <h2 class='primary-header'>SPECIAL COURSES</h2>
               <p>Special courses helps students/professionals to develop their skills.</p>
               <a href="" class="primary-btn btn">Discover</a>
             </div>
@@ -107,6 +109,35 @@
   </section>
   <section id="find-note-section">
     <div class='find-note-container'>
+      <h2 class='primary-header text-center'>
+        Find Notes and share or earn from your note
+      </h2>
+      <p class='text-center'>
+        Note from top student are uploaded here. You can find desired notes or you can share your notes for free or earn over 5K per month from selling your notes.
+      </p>
+      <div class='text-center'>
+        <a href='#' class='btn primary-btn'> Discover </a>
+      </div>
+    </div>
+  </section>
+  <section id='become-tutor-section'>
+    <h2 class='primary-header text-center'> Become a tutor today </h2>
+    <p class='text-center'>
+      Teach what you love. Edutube gives you the opperuanity to create courses, take live classes, help students by solving their problems and selling your notes suggestion online. Join international tutor community and build your profile.
+    </p>
+    <div class='text-center'>
+      <a href='#' class='btn primary-btn'> Become a Tutor </a>
+    </div>
+  </section>
+  <section id="help-center-section">
+    <h2 class='primary-header text-center'>
+      Help Center
+    </h2>
+    <p class='text-center'>
+      If you have any queries, we are here to help you. Ask what you need. We will be at your assistance.
+    </p>
+    <div class='text-center'>
+      <a href='#' class='btn primary-btn'> Report Problem </a>
     </div>
   </section>
 @stop
