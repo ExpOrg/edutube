@@ -1,7 +1,7 @@
 <section id="main-menu"><!-- Main menu -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <a class="navbar-brand" href="#">EDUTUBE</a>
+        <a class="edutube-navbar-brand navbar-brand" href="#">EDUTUBE</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -63,10 +63,10 @@
               <a href="#" class='nav-link'><i class="fa fa-shopping-cart"></i></a>
             </li>
             <li class="nav-item">
-              <a data-target="#login-modal" data-toggle="modal" class="btn default-btn">Sign in</a>
+              <a style="margin-top: 5px" data-target="#login-modal" data-toggle="modal" class="btn default-btn">Sign in</a>
             </li>
             <li class="nav-item">
-              <a data-target="#registration-modal" data-toggle="modal" class="primary-btn btn">Sign up</a>
+              <a style="margin-top: 5px" data-target="#registration-modal" data-toggle="modal" class="primary-btn btn">Sign up</a>
             </li>
           </ul>
         </div><!-- /.navbar-collapse -->

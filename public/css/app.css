@@ -6,10 +6,27 @@
 
 /* Social icon color */
 
+/* Bootstrap customization */
+
+.edutube-navbar-brand {
+  font-weight: bold;
+  font-size: 18px !important;
+  letter-spacing: 1px;
+}
+
+.navbar-nav .nav-item .nav-link {
+  font-size: 13px;
+  color: #3a3a3a !important;
+}
+
 /* Navbar customization */
 
 .navbar {
   margin-bottom: inherit !important;
+}
+
+.search-form {
+  max-width: 370px;
 }
 
 .navbar-form {
@@ -20,11 +37,12 @@
 
 .navbar-form .navbar-search-input {
   width: 100%;
-  border: solid 1px #cccccc;
-  background: #efefef;
+  border: solid 2px #ececec;
+  background: #f1f1f1;
   border-radius: 4px;
-  padding: 5px 40px 5px 15px;
+  padding: 6px 40px 6px 15px;
   outline: none;
+  font-size: 11px;
 }
 
 .navbar-form .navbar-search-input:hover {
@@ -34,10 +52,11 @@
 .navbar-form:before {
   content: "\F002";
   font-family: 'FontAwesome';
-  top: 4px;
+  top: 6px;
   right: 10px;
   position: absolute;
-  color: #333333;
+  color: #3d3d3d;
+  font-size: 14px;
 }
 
 .flipkart-navbar-input {
@@ -64,6 +83,34 @@
   max-height: 450px;
 }
 
+.carousel-inner .carousel-item {
+  position: relative;
+}
+
+.carousel-inner .carousel-item .carousel-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 35%;
+}
+
+.carousel-inner .carousel-item .carousel-caption h5 {
+  font-size: 25px;
+}
+
+.carousel-indicators li {
+  width: 10px !important;
+  height: 10px !important;
+  background-color: transparent !important;
+  border-radius: 50% !important;
+  border: 1px solid #fff !important;
+}
+
+.carousel-indicators .active {
+  border: 1px solid #0fa458 !important;
+  background-color: #fff !important;
+}
+
 /* Largest community */
 
 #largest-community {
@@ -87,12 +134,22 @@
   margin-right: 20px;
 }
 
+.brand-item .item-img img {
+  width: 52px;
+}
+
 .brand-item .item-text {
   float: left;
 }
 
 .brand-item .item-text h4 {
   margin-bottom: 0;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.brand-item .item-text p {
+  font-size: 13px;
 }
 
 .landing-top-section {
@@ -103,9 +160,26 @@
 
 .learn-anytime .learn-anytime-row .left-col {
   padding-left: 105px;
-  padding-top: 35px;
+  padding-top: 50px;
   padding-bottom: 35px;
   min-height: 310px;
+}
+
+.learn-anytime .learn-anytime-row .left-col h4 {
+  font-weight: bold;
+  color: #323232;
+  font-size: 22px;
+}
+
+.learn-anytime .learn-anytime-row .left-col h5 {
+  font-size: 16px;
+  color: #3e3e3e;
+}
+
+.learn-anytime .learn-anytime-row .left-col p {
+  color: #3e3e3e;
+  font-size: 13px;
+  line-height: 15px;
 }
 
 .learn-anytime .learn-anytime-row .right-col {
@@ -127,8 +201,19 @@
   background: #f1f1f1;
   border: 1px solid #eee;
   padding-bottom: 25px;
-  -webkit-box-shadow: 0 0 3px #cccccc;
-          box-shadow: 0 0 3px #cccccc;
+  -webkit-box-shadow: 0px 2px 3px #ddd;
+  box-shadow: 0px 2px 3px #ddd;
+  box-shadow: 0px 2px 3px #ddd;
+}
+
+.skill-item-wrap .skill-row .skill-col .item h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.skill-item-wrap .skill-row .skill-col .item p {
+  font-size: 14px;
+  color: #3e3e3e;
 }
 
 #find-note-section {
@@ -141,7 +226,17 @@
   -webkit-box-shadow: 0px 0px 5px #cccccc;
           box-shadow: 0px 0px 5px #cccccc;
   border-radius: 3px;
-  padding: 40px;
+  padding: 40px 200px;
+}
+
+#find-note-section .find-note-container h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#find-note-section .find-note-container p {
+  font-size: 14px;
+  color: #3e3e3e;
 }
 
 #become-tutor-section {
@@ -152,8 +247,16 @@
   color: #ffffff;
 }
 
+#become-tutor-section p {
+  font-size: 14px;
+}
+
 #help-center-section {
   padding: 60px 75px;
+}
+
+#help-center-section p {
+  font-size: 14px;
 }
 
 #master-skill {
@@ -291,7 +394,8 @@ label.input-label {
 }
 
 .footer-wrap footer .footer-row .footer-col .edutube p {
-  font-size: 14px;
+  font-size: 12px;
+  color: #3e3e3e;
 }
 
 .footer-wrap footer .footer-row .footer-col .get-to-know h4,
@@ -314,7 +418,7 @@ label.input-label {
 .footer-wrap footer .footer-row .footer-col .partner ul li a {
   display: inline-block;
   cursor: pointer;
-  color: #aaaaaa;
+  color: #3e3e3e;
   font-size: 12px;
   margin-bottom: 10px;
 }
@@ -400,6 +504,8 @@ label.input-label {
 
 .question-blog .question-blog-container .question-blog-row .left-col p {
   font-size: 14px;
+  color: #3e3e3e;
+  margin-bottom: 30px;
 }
 
 .question-blog .question-blog-container .question-blog-row .right-col {
@@ -443,12 +549,13 @@ label.input-label {
 }
 
 .question-blog .question-blog-container .question-blog-row .right-col ul li .question-item .item-content h5 {
-  font-size: 15px;
+  font-size: 13px;
   font-weight: bold;
 }
 
 .question-blog .question-blog-container .question-blog-row .right-col ul li .question-item .item-content p {
   font-size: 13px;
+  margin-bottom: 10px;
 }
 
 .question-blog .question-blog-container .question-blog-row .right-col ul li .question-item .item-content ul {
@@ -463,7 +570,7 @@ label.input-label {
 .question-blog .question-blog-container .question-blog-row .right-col ul li .question-item .item-content ul li {
   border: inherit;
   display: inline-block;
-  margin-right: 15px;
+  margin-right: 10px;
   float: left;
   padding: inherit;
 }
@@ -484,6 +591,7 @@ label.input-label {
 .question-blog .question-blog-container .question-blog-row .right-col .see-all a {
   color: #ef294a;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .question-blog .question-blog-container .question-blog-row .right-col .see-all a:hover {
@@ -504,13 +612,23 @@ label.input-label {
   font-size: 22px;
   text-transform: uppercase;
   margin-bottom: 15px;
+  color: #323232;
+}
+
+.primary-header-white {
+  font-weight: bold;
+  font-size: 22px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  color: #fff;
 }
 
 /* Button design for edutube */
 
 .primary-btn {
+  font-size: 13px !important;
+  padding: 4px 16px !important;
   color: #fff !important;
-  font-weight: bold !important;
   background-color: #ef294a;
   border-bottom: 2px solid rgba(0, 0, 0, 0.25) !important;
 }
@@ -523,10 +641,11 @@ label.input-label {
 }
 
 .default-btn {
+  font-size: 13px !important;
+  padding: 4px 16px !important;
   color: #333333 !important;
-  font-weight: bold !important;
   background-color: #f1f1f1;
-  border-bottom: 2px solid rgba(200, 200, 200, 0.25) !important;
+  border-bottom: 2px solid #c7c7c7 !important;
 }
 
 .default-btn:hover {
@@ -580,7 +699,8 @@ label.input-label {
   min-height: 40px;
   display: inline-block;
   text-align: center;
-  line-height: 27px;
+  line-height: 28px !important;
+  font-size: 15px !important;
 }
 
 /* Search button */
@@ -590,20 +710,20 @@ label.input-label {
   border-radius: 3px 0 0 3px;
   border: 0 none;
   outline: 0 none;
-  font-size: 15px;
-  border: 1px solid #e2e2e2;
+  font-size: 10px;
+  border: 1px solid #ececec;
   border-right: 0;
 }
 
 .search-group-btn .group-btn {
   background-color: #ef294a;
-  border: 1px solid #ef294a;
+  border: inherit;
   border-radius: 0 3px 3px 0;
   color: #fff;
-  padding: 1px 7px;
   text-decoration: none;
   cursor: pointer;
-  line-height: 23px;
+  font-size: 10px;
+  outline: none;
 }
 
 /* Footer social media button class declaration */

@@ -66,7 +66,7 @@
           </p>
           <form class="search-form" role="search">
             <div class="input-group search-group-btn">
-              <input type="text" class="form-control search-btn-input" placeholder="Username">
+              <input type="text" class="form-control search-btn-input" placeholder="e.g. mathematics">
               <button type="submit" class="input-group-addon group-btn">
                 Find a Tutor
               </button>
@@ -84,21 +84,21 @@
   </div>
   <section id="master-skill">
     <div class="skill">
-      <h2 class="text-center primary-header" style="margin: 0 0 40px 0;">
+      <h4 class="text-center primary-header" style="margin: 0 0 40px 0;">
         MASTER YOUR SKILLS
-      </h2>
+      </h4>
       <div class="skill-item-wrap">
         <div class="row skill-row text-center">
           <div class="col-md-6 col-xs-12 skill-col">
             <div class="item">
-              <h2 class='primary-header'>ACADEMIC COURSES</h2>
+              <h2>ACADEMIC COURSES</h2>
               <p>Courses with details curriculum from expert tutors.</p>
               <a href="" class="primary-btn btn btn-size-2x">Discover</a>
             </div>
           </div>
           <div class="col-md-6 col-xs-12 skill-col">
             <div class="item">
-              <h2 class='primary-header'>SPECIAL COURSES</h2>
+              <h2>SPECIAL COURSES</h2>
               <p>Special courses helps students/professionals to develop their skills.</p>
               <a href="" class="primary-btn btn btn-size-2x">Discover</a>
             </div>
@@ -109,7 +109,7 @@
   </section>
   <section id="find-note-section">
     <div class='find-note-container'>
-      <h2 class='primary-header text-center'>
+      <h2 class='text-center'>
         Find Notes and share or earn from your note
       </h2>
       <p class='text-center'>
@@ -126,7 +126,7 @@
       <div class="col-lg-12 question-blog-container">
         <div class="row question-blog-row">
           <div class="col-md-6 col-xs-12 left-col">
-            <h4>ENCOURAGE ASKING "-REPLY"</h4>
+            <h4>ENCOURAGE ASKING " - REPLY "</h4>
             <p>
               Question & Answer blog where questions are asked, answered, edited and organized
               by students and tutors. This is a great portal for users to learn new things and
@@ -180,7 +180,7 @@
 
   </section>
   <section id='become-tutor-section'>
-    <h2 class='primary-header text-center'> Become a tutor today </h2>
+    <h2 class='primary-header-white text-center'> Become a tutor today </h2>
     <p class='text-center'>
       Teach what you love. Edutube gives you the opperuanity to create courses, take live classes, help students by solving their problems and selling your notes suggestion online. Join international tutor community and build your profile.
     </p>
