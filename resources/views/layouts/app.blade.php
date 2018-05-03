@@ -9,7 +9,7 @@
  @include('auth.login')
  @include('auth.passwords.email')
  <div id="page-content">
- <div class="fluid-container" style="margin-bottom: 60px">
+ <div class="fluid-container">
 	@yield('content')
  </div>
  </div>
