@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "variables";
 /* Navbar customization */
 .navbar {
   margin-bottom: inherit !important;
@@ -133,7 +134,7 @@
   .find-note-container {
     background: $white;
     box-shadow: 0px 0px 5px #cccccc;
-    border-radius: 10px;
+    border-radius: 3px;
     padding: 40px;
   }
 }
@@ -263,10 +264,46 @@ label {
   }
 }
 
-.footer-container {
+.footer-wrap {
   footer {
-    padding: 60px 75px;
+    padding: 60px 30px 40px 30px;
     background: $secondary-color;
+    .footer-row {
+      .footer-col {
+        .edutube {
+          h3 {
+            font-size: 16px;
+            font-weight: bold;
+          }
+          p {
+            font-size: 14px;
+          }
+        }
+        .get-to-know, .learn, .partner {
+          h4 {
+            font-size: 14px;
+            font-weight: bold;
+          }
+          ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            li {
+              a {
+                display: inline-block;
+                cursor: pointer;
+                color: #aaaaaa;
+                font-size: 12px;
+                margin-bottom: 10px;
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
   .footer-bottom-section {
     background: #ffffff;
@@ -313,6 +350,104 @@ label {
               }
             }
           }
+        }
+      }
+    }
+  }
+}
+
+/* Question and answer blog design */
+.question-blog {
+  border-top: 1px solid #ddd;
+  .question-blog-container {
+    .question-blog-row {
+      .left-col {
+        padding-left: 105px;
+        padding-top: 35px;
+        padding-bottom: 35px;
+        min-height: 310px;
+        h4 {
+          font-size: 16px;
+          font-weight: bold;
+        }
+        p {
+          font-size: 14px;
+        }
+        a {}
+      }
+      .right-col {
+        background: $secondary-color;
+        padding: inherit;
+        border-left: 1px solid #ddd;
+        h3 {
+          font-size: 18px;
+          font-weight: bold;
+          padding: 20px 30px;
+          margin: 0;
+        }
+        ul {
+          padding: 0;
+          margin: 0;
+          list-style-type: none;
+          background-color: $white;
+          li {
+            padding-left: 30px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            .question-item {
+              clear: both;
+              overflow: hidden;
+              .item-img {
+                float: left;
+                img {}
+              }
+              .item-content {
+                padding-left: 55px;
+                h5 {
+                  font-size: 15px;
+                  font-weight: bold;
+                }
+                p {
+                  font-size: 13px;
+                }
+                ul {
+                  padding: 0;
+                  margin: 0;
+                  list-style-type: none;
+                  background-color: $white;
+                  clear: both;
+                  overflow: hidden;
+                  li {
+                    border: inherit;
+                    display: inline-block;
+                    margin-right: 15px;
+                    float: left;
+                    padding: inherit;
+                    a {
+                      display: inline-block;
+                      padding: 2px 20px;
+                      background-color: $secondary-color;
+                      border-radius: 15px;
+                      font-size: 12px;
+                      color: $icon-color;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .see-all {
+          padding: 15px 30px;
+          a {
+            color: $primary-btn;
+            cursor: pointer;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+
         }
       }
     }

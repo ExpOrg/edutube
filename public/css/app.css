@@ -1,5 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);/* Color name declaration */
 
+/* Social icon color */
+
+/* Color name declaration */
+
+/* Social icon color */
+
 /* Navbar customization */
 
 .navbar {
@@ -134,7 +140,7 @@
   background: #fff;
   -webkit-box-shadow: 0px 0px 5px #cccccc;
           box-shadow: 0px 0px 5px #cccccc;
-  border-radius: 10px;
+  border-radius: 3px;
   padding: 40px;
 }
 
@@ -274,40 +280,80 @@ label.input-label {
   font-size: 12px;
 }
 
-.footer-container footer {
-  padding: 60px 75px;
+.footer-wrap footer {
+  padding: 60px 30px 40px 30px;
   background: #f1f1f1;
 }
 
-.footer-container .footer-bottom-section {
+.footer-wrap footer .footer-row .footer-col .edutube h3 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.footer-wrap footer .footer-row .footer-col .edutube p {
+  font-size: 14px;
+}
+
+.footer-wrap footer .footer-row .footer-col .get-to-know h4,
+.footer-wrap footer .footer-row .footer-col .learn h4,
+.footer-wrap footer .footer-row .footer-col .partner h4 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.footer-wrap footer .footer-row .footer-col .get-to-know ul,
+.footer-wrap footer .footer-row .footer-col .learn ul,
+.footer-wrap footer .footer-row .footer-col .partner ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.footer-wrap footer .footer-row .footer-col .get-to-know ul li a,
+.footer-wrap footer .footer-row .footer-col .learn ul li a,
+.footer-wrap footer .footer-row .footer-col .partner ul li a {
+  display: inline-block;
+  cursor: pointer;
+  color: #aaaaaa;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.footer-wrap footer .footer-row .footer-col .get-to-know ul li a:hover,
+.footer-wrap footer .footer-row .footer-col .learn ul li a:hover,
+.footer-wrap footer .footer-row .footer-col .partner ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-wrap .footer-bottom-section {
   background: #ffffff;
   padding: 6px 20px;
 }
 
-.footer-container .footer-bottom-section .left-section {
+.footer-wrap .footer-bottom-section .left-section {
   float: left;
   color: #999999;
   font-size: 13px;
   padding-top: 4px;
 }
 
-.footer-container .footer-bottom-section .right-section {
+.footer-wrap .footer-bottom-section .right-section {
   float: right;
 }
 
-.footer-container .footer-bottom-section .right-section ul {
+.footer-wrap .footer-bottom-section .right-section ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.footer-container .footer-bottom-section .right-section ul li {
+.footer-wrap .footer-bottom-section .right-section ul li {
   line-height: 16px;
   position: relative;
   display: inline-block;
 }
 
-.footer-container .footer-bottom-section .right-section ul li a {
+.footer-wrap .footer-bottom-section .right-section ul li a {
   position: relative;
   color: #999999;
   text-decoration: none;
@@ -315,11 +361,11 @@ label.input-label {
   font-size: 13px;
 }
 
-.footer-container .footer-bottom-section .right-section ul li a:hover {
+.footer-wrap .footer-bottom-section .right-section ul li a:hover {
   text-decoration: none;
 }
 
-.footer-container .footer-bottom-section .right-section ul li a:before {
+.footer-wrap .footer-bottom-section .right-section ul li a:before {
   content: '';
   position: absolute;
   border-right: solid 1px #aaaaaa;
@@ -328,10 +374,124 @@ label.input-label {
   bottom: 5px;
 }
 
-.footer-container .footer-bottom-section .right-section ul li:last-child a:before {
+.footer-wrap .footer-bottom-section .right-section ul li:last-child a:before {
   content: '';
   border-right: none;
 }
+
+/* Question and answer blog design */
+
+.question-blog {
+  border-top: 1px solid #ddd;
+}
+
+.question-blog .question-blog-container .question-blog-row .left-col {
+  padding-left: 105px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  min-height: 310px;
+}
+
+.question-blog .question-blog-container .question-blog-row .left-col h4 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.question-blog .question-blog-container .question-blog-row .left-col p {
+  font-size: 14px;
+}
+
+.question-blog .question-blog-container .question-blog-row .right-col {
+  background: #f1f1f1;
+  padding: inherit;
+  border-left: 1px solid #ddd;
+}
+
+.question-blog .question-blog-container .question-blog-row .right-col h3 {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 20px 30px;
+  margin: 0;
+}
+
+.question-blog .question-blog-container .question-blog-row .right-col ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  background-color: #fff;
+}
+
+.question-blog .question-blog-container .question-blog-row .right-col ul li {
+  padding-left: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.question-blog .question-blog-container .question-blog-row .right-col ul li .question-item {
+  clear: both;
+  overflow: hidden;
+}
+
+.question-blog .question-blog-container .question-blog-row .right-col ul li .question-item .item-img {
+  float: left;
+}
+
+.question-blog .question-blog-container .question-blog-row .right-col ul li .question-item .item-content {
+  padding-left: 55px;
+}
+
+.question-blog .question-blog-container .question-blog-row .right-col ul li .question-item .item-content h5 {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.question-blog .question-blog-container .question-blog-row .right-col ul li .question-item .item-content p {
+  font-size: 13px;
+}
+
+.question-blog .question-blog-container .question-blog-row .right-col ul li .question-item .item-content ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  background-color: #fff;
+  clear: both;
+  overflow: hidden;
+}
+
+.question-blog .question-blog-container .question-blog-row .right-col ul li .question-item .item-content ul li {
+  border: inherit;
+  display: inline-block;
+  margin-right: 15px;
+  float: left;
+  padding: inherit;
+}
+
+.question-blog .question-blog-container .question-blog-row .right-col ul li .question-item .item-content ul li a {
+  display: inline-block;
+  padding: 2px 20px;
+  background-color: #f1f1f1;
+  border-radius: 15px;
+  font-size: 12px;
+  color: #3a3a3a;
+}
+
+.question-blog .question-blog-container .question-blog-row .right-col .see-all {
+  padding: 15px 30px;
+}
+
+.question-blog .question-blog-container .question-blog-row .right-col .see-all a {
+  color: #ef294a;
+  cursor: pointer;
+}
+
+.question-blog .question-blog-container .question-blog-row .right-col .see-all a:hover {
+  text-decoration: underline;
+}
+
+/* Color name declaration */
+
+/* Social icon color */
 
 .hints {
   font-size: 14px;
@@ -443,6 +603,52 @@ label.input-label {
   text-decoration: none;
   cursor: pointer;
   line-height: 23px;
+}
+
+/* Footer social media button class declaration */
+
+.facebook-bg {
+  background-color: #3b5998;
+}
+
+.twitter-bg {
+  background-color: #1da1f2;
+}
+
+.youtube-bg {
+  background-color: #ff0000;
+}
+
+.linkedin-bg {
+  background-color: #007bb5;
+}
+
+.footer-social {
+  margin-bottom: 15px;
+}
+
+.footer-social ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-social ul li {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.footer-social ul li a {
+  display: inline-block;
+  padding: 0px 7px;
+  font-size: 15px;
+  color: #fff;
+  border-radius: 3px;
+}
+
+.footer-social ul li a:hover {
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .navbar-laravel {

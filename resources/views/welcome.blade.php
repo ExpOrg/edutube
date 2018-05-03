@@ -93,14 +93,14 @@
             <div class="item">
               <h2 class='primary-header'>ACADEMIC COURSES</h2>
               <p>Courses with details curriculum from expert tutors.</p>
-              <a href="" class="primary-btn btn">Discover</a>
+              <a href="" class="primary-btn btn btn-size-2x">Discover</a>
             </div>
           </div>
           <div class="col-md-6 col-xs-12 skill-col">
             <div class="item">
               <h2 class='primary-header'>SPECIAL COURSES</h2>
               <p>Special courses helps students/professionals to develop their skills.</p>
-              <a href="" class="primary-btn btn">Discover</a>
+              <a href="" class="primary-btn btn btn-size-2x">Discover</a>
             </div>
           </div>
         </div>
@@ -116,9 +116,68 @@
         Note from top student are uploaded here. You can find desired notes or you can share your notes for free or earn over 5K per month from selling your notes.
       </p>
       <div class='text-center'>
-        <a href='#' class='btn primary-btn'> Discover </a>
+        <a href='#' class='btn primary-btn btn-size-2x'> Discover </a>
       </div>
     </div>
+  </section>
+
+  <section id="question-blog">
+    <div class="question-blog">
+      <div class="col-lg-12 question-blog-container">
+        <div class="row question-blog-row">
+          <div class="col-md-6 col-xs-12 left-col">
+            <h4>ENCOURAGE ASKING "-REPLY"</h4>
+            <p>
+              Question & Answer blog where questions are asked, answered, edited and organized
+              by students and tutors. This is a great portal for users to learn new things and
+              to connect with others. You can share your thoughts by answering questions and
+              build your reputation.
+            </p>
+            <a href="#" class="btn primary-btn btn-size-2x">Join Question & Answer Blog</a>
+          </div>
+          <div class="col-md-6 col-xs-12 right-col">
+            <h3>LATEST ADDITION IN QUESTION BANK</h3>
+            <ul>
+              <li>
+                <div class="question-item">
+                  <div class="item-img">
+                    <img src="{{asset('images/learn-eng.png')}}" alt="">
+                  </div>
+                  <div class="item-content">
+                    <h5>SSC Exam Preparation English Question Bank - 2018</h5>
+                    <p>Total Questions 500</p>
+                    <ul>
+                      <li><a href="">SSC</a></li>
+                      <li><a href="">English</a></li>
+                      <li><a href="">All Level</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="question-item">
+                  <div class="item-img">
+                    <img src="{{asset('images/ielts.png')}}" alt="">
+                  </div>
+                  <div class="item-content">
+                    <h5>IELTS Exam Preparation English Question Bank - 2018</h5>
+                    <p>Total Questions 500</p>
+                    <ul>
+                      <li><a href="">IELTS</a></li>
+                      <li><a href="">All Level</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="see-all">
+              <a href="#">See All</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </section>
   <section id='become-tutor-section'>
     <h2 class='primary-header text-center'> Become a tutor today </h2>
@@ -126,7 +185,7 @@
       Teach what you love. Edutube gives you the opperuanity to create courses, take live classes, help students by solving their problems and selling your notes suggestion online. Join international tutor community and build your profile.
     </p>
     <div class='text-center'>
-      <a href='#' class='btn primary-btn'> Become a Tutor </a>
+      <a href='#' class='btn primary-btn btn-size-2x'> Become a Tutor </a>
     </div>
   </section>
   <section id="help-center-section">
@@ -137,7 +196,7 @@
       If you have any queries, we are here to help you. Ask what you need. We will be at your assistance.
     </p>
     <div class='text-center'>
-      <a href='#' class='btn primary-btn'> Report Problem </a>
+      <a href='#' class='btn primary-btn btn-size-2x'> Report Problem </a>
     </div>
   </section>
 @stop

@@ -1,3 +1,5 @@
+@import "variables";
+
 .hints {
   font-size: 14px;
   font-family: 'Railway';
@@ -101,5 +103,37 @@
     text-decoration: none;
     cursor: pointer;
     line-height: 23px;
+  }
+}
+
+/* Footer social media button class declaration */
+.facebook-bg {background-color: $facebook}
+.twitter-bg {background-color: $twitter}
+.youtube-bg {background-color: $youtube}
+.linkedin-bg {background-color: $linkedin}
+
+.footer-social {
+  margin-bottom: 15px;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      margin-right: 5px;
+      a {
+        display: inline-block;
+        padding: 0px 7px;
+        font-size: 15px;
+        color: $white;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        &:hover {
+          cursor: pointer;
+          text-decoration: none;
+        }
+      }
+    }
   }
 }
