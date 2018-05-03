@@ -23,7 +23,7 @@
                   </div>
                 </div>            
 
-                <input type="submit" class="btn btn-block primary-btn" name="submit" value="Submit">
+                <input type="submit" class="btn btn-block primary-btn btn-size-2x" name="submit" value="Submit">
 
             {!! Form::close() !!}
           </div>

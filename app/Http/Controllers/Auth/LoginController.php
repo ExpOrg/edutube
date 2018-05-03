@@ -50,12 +50,20 @@ class LoginController extends Controller
 
         if ($request->ajax()) {
             return response()->json([
-                'auth' => $auth,
-                'intended' => URL::previous()
+                'success' => $auth,
+                'intended' => URL::previous(),
+                'message' => "Invalid email or password!"
             ]);
         } else {
             return redirect()->intended(URL::route('dashboard'));
         }
         return redirect(URL::route('login_page'));
+    }
+
+    public function logout () {
+        //logout user
+        auth()->logout();
+        // redirect to homepage
+        return redirect('/');
     }
 }

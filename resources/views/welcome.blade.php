@@ -179,6 +179,28 @@
     </div>
 
   </section>
+
+  <section id='community-section'>
+    <h2 class='primary-header text-center'> Our Amazing community </h2>
+    <div class='slider-items'>
+      <div class='slider-item'>
+        <p>
+          "I love the content and teaching approach and wouldn't be where I am now without Edutube. Online courses increased my discipline
+          and self-esteem and I'm not affraid to take chalanges in my career anymore"
+        </p>
+        <div class='user-section clearfix'>
+          <div class='avatar'>
+            img
+          </div>
+          <div class='information'>
+            <h4> Nawaj Uddin </h4>
+            Student, BUET
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id='become-tutor-section'>
     <h2 class='primary-header-white text-center'> Become a tutor today </h2>
     <p class='text-center'>

@@ -25,7 +25,7 @@
                  <label class="input-label"> 
                    Password: 
                    <span style='font-weight: normal;' class='hints pull-right'> 
-                     <a href='#' data-target="#forgot-password-modal" data-toggle="modal">
+                     <a href='#' data-target="#forgot-password-modal" data-toggle="modal" style="color: #666666;">
                        Forgot password? 
                      </a>
                    </span>
@@ -36,7 +36,7 @@
                   </div>
                 </div>             
 
-                <input type="submit" class="btn btn-block primary-btn" name="submit" value="Sign up">
+                <input type="submit" class="btn btn-block primary-btn btn-size-2x" name="submit" value="Sign in">
 
                 <div style="margin-top: 5px;">
                   <label for="remember-me">

@@ -1,5 +1,12 @@
 @import "variables";
 
+* {
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
 .hints {
   font-size: 14px;
   font-family: 'Railway';
@@ -98,13 +105,17 @@
 /* Search button */
 .search-group-btn {
   .search-btn-input {
-    padding: 8px 15px;
+    padding: 10px 15px;
     border-radius: 3px 0 0 3px;
     border: 0 none;
     outline: 0 none;
     font-size: 10px;
     border: 1px solid $boder-color;
     border-right: 0;
+    outline: none;
+    &:focus {
+      outline: 0;
+    }
   }
   .group-btn {
     background-color: $pink;
@@ -115,6 +126,7 @@
     cursor: pointer;
     font-size: 10px;
     outline: none;
+    padding: 0 15px;
   }
 }
 
@@ -148,4 +160,10 @@
       }
     }
   }
+}
+
+/* Validation error message */
+
+.validation-error {
+  color: red;
 }

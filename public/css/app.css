@@ -192,8 +192,8 @@
 /* Skill */
 
 .skill-item-wrap .skill-row {
-  margin-left: 150px;
-  margin-right: 150px;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .skill-item-wrap .skill-row .skill-col .item {
@@ -214,6 +214,7 @@
 .skill-item-wrap .skill-row .skill-col .item p {
   font-size: 14px;
   color: #3e3e3e;
+  min-height: 50px;
 }
 
 #find-note-section {
@@ -261,6 +262,49 @@
 
 #master-skill {
   padding: 60px 75px;
+}
+
+#community-section {
+  border-top: solid 1px #f1f1f1;
+  padding: 60px 75px;
+}
+
+#community-section .slider-items .slider-item {
+  padding: 20px 30px;
+}
+
+#community-section p {
+  font-size: 14px;
+  text-align: center;
+}
+
+#community-section .user-section {
+  border-radius: 30px;
+  background: #f1f1f1;
+  text-align: center;
+  max-width: 210px;
+  padding: 5px 0;
+  overflow: hidden;
+  margin: auto;
+}
+
+#community-section .user-section .avatar {
+  width: 50px;
+  border-radius: 100%;
+  padding: 10px;
+  margin: 0 5px 0 10px;
+  float: left;
+  background: #ffffff;
+}
+
+#community-section .user-section .information {
+  text-align: center;
+  font-size: 13px;
+}
+
+#community-section .user-section .information h4 {
+  margin-bottom: 4px;
+  font-size: 16px;
 }
 
 /* Login and registration modal and content design */
@@ -602,6 +646,12 @@ label.input-label {
 
 /* Social icon color */
 
+*:focus {
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
 .hints {
   font-size: 14px;
   font-family: 'Railway';
@@ -706,13 +756,18 @@ label.input-label {
 /* Search button */
 
 .search-group-btn .search-btn-input {
-  padding: 8px 15px;
+  padding: 10px 15px;
   border-radius: 3px 0 0 3px;
   border: 0 none;
   outline: 0 none;
   font-size: 10px;
   border: 1px solid #ececec;
   border-right: 0;
+  outline: none;
+}
+
+.search-group-btn .search-btn-input:focus {
+  outline: 0;
 }
 
 .search-group-btn .group-btn {
@@ -724,6 +779,7 @@ label.input-label {
   cursor: pointer;
   font-size: 10px;
   outline: none;
+  padding: 0 15px;
 }
 
 /* Footer social media button class declaration */
@@ -770,6 +826,12 @@ label.input-label {
 .footer-social ul li a:hover {
   cursor: pointer;
   text-decoration: none;
+}
+
+/* Validation error message */
+
+.validation-error {
+  color: red;
 }
 
 .navbar-laravel {

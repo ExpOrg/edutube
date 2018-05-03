@@ -62,12 +62,20 @@
             <li class="nav-item">
               <a href="#" class='nav-link'><i class="fa fa-shopping-cart"></i></a>
             </li>
-            <li class="nav-item">
-              <a style="margin-top: 5px" data-target="#login-modal" data-toggle="modal" class="btn default-btn">Sign in</a>
-            </li>
-            <li class="nav-item">
-              <a style="margin-top: 5px" data-target="#registration-modal" data-toggle="modal" class="primary-btn btn">Sign up</a>
-            </li>
+            @if(Auth::check())
+              <li class='nav-item'>
+                <a style="margin-top: 5px" href="{{ url('/logout') }}" class="btn primary-btn">
+                  Logout
+                </a>
+              </li>
+            @else
+              <li class="nav-item">
+                <a style="margin-top: 5px" data-target="#login-modal" data-toggle="modal" class="btn default-btn">Sign in</a>
+              </li>
+              <li class="nav-item">
+                <a style="margin-top: 5px" data-target="#registration-modal" data-toggle="modal" class="primary-btn btn">Sign up</a>
+              </li>
+            @endif
           </ul>
         </div><!-- /.navbar-collapse -->
     </nav>

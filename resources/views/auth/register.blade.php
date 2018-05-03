@@ -41,7 +41,7 @@
                  <label class="input-label"> Confirm Password: </label>
                  <div class="group-input">
                   <span class='input-icon'> <i class='fa fa-lock'></i></span>
-                  <input type="password" class="input-inner" name="confirm_password">
+                  <input type="password" class="input-inner" name="password_confirmation">
                   </div>
                 </div>                
 
@@ -52,7 +52,7 @@
                   </label>
                 </div>
 
-                <input type="submit" class="btn btn-block primary-btn" name="submit" value="Sign up">
+                <input type="submit" class="btn btn-block primary-btn btn-size-2x" name="submit" value="Sign up">
 
                 <span class='hints'> 
                   By signing up you are agree to our 

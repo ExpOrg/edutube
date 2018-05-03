@@ -7,12 +7,23 @@ $(function() {
       type: 'post',
       dataType: 'JSON',
       data: getFormData(form),
+      beforeSend: function() {
+       $('.validation-error').remove();
+      },
       success: function(response) {
-        if(response.auth) {
-          alert("Success");
+        if(response.success) {
+          window.location.href = response.intended;
         }
         else {
-          alert("Invalid email or password");
+          if(response.errors) {
+            errors = response.errors;
+            for(var key in errors) {
+             formatErrorMessage(form,  key, errors[key]); 
+            }
+          }
+          else {
+            alert(response.message);
+          }
         }
       },
       error: function(e) {
@@ -32,4 +43,9 @@ function getFormData(form) {
     });
     console.log(formData);
     return formData;
+}
+
+function formatErrorMessage(form, field, msg) {
+  message = "<span class='validation-error'>" + msg + "</span>";
+  form.find("input[name='" + field + "']").parent().after(message); 
 }
