@@ -13,6 +13,7 @@
 
 // Application Root Routes
 Route::get('/', 'WelcomeController@welcome')->name('welcome');
+Route::get('/profile', 'UserController@profile')->name('profile');
 
 // Authentication Routes
 Auth::routes();
