@@ -89,10 +89,6 @@
   max-height: 450px;
 }
 
-.carousel-inner .carousel-item {
-  position: relative;
-}
-
 .carousel-inner .carousel-item .carousel-caption {
   position: absolute;
   left: 0;
@@ -146,7 +142,7 @@
 }
 
 .brand-item .item-text {
-  float: left;
+  padding-left: 70px;
 }
 
 .brand-item .item-text h4 {
@@ -204,8 +200,12 @@
 /* Skill */
 
 .skill-item-wrap .skill-row {
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.skill-item-wrap .skill-row .skill-col {
+  margin-bottom: 15px;
 }
 
 .skill-item-wrap .skill-row .skill-col .item {
@@ -233,7 +233,7 @@
 
 #find-note-section {
   background: #f1f1f1;
-  padding: 60px 75px;
+  padding: 4% 6%;
 }
 
 #find-note-section .find-note-container {
@@ -241,7 +241,7 @@
   -webkit-box-shadow: 0px 0px 5px #cccccc;
           box-shadow: 0px 0px 5px #cccccc;
   border-radius: 3px;
-  padding: 40px 200px;
+  padding: 5% 15%;
 }
 
 #find-note-section .find-note-container h2 {
@@ -257,10 +257,11 @@
 }
 
 #become-tutor-section {
-  padding: 60px 75px;
+  padding: 6% 7%;
   background-image: url("/images/bg-1.jpg");
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
   color: #fff;
 }
 
@@ -270,7 +271,7 @@
 }
 
 #help-center-section {
-  padding: 60px 75px;
+  padding: 5% 7%;
 }
 
 #help-center-section p {
@@ -284,7 +285,7 @@
 
 #community-section {
   border-top: solid 1px #f1f1f1;
-  padding: 60px 75px;
+  padding: 5% 7%;
 }
 
 #community-section h2 {
@@ -568,7 +569,7 @@ label.input-label {
 }
 
 .question-blog .question-blog-container .question-blog-row .left-col {
-  padding-left: 105px;
+  padding-left: 10%;
   padding-top: 35px;
   padding-bottom: 35px;
   min-height: 310px;
@@ -11654,6 +11655,29 @@ select.form-control-default {
 
 .min-height-viewport-200 {
   min-height: 200vh !important;
+}
+
+@media all and (max-width: 1199px) {
+  #master-skill {
+    padding: 30px 0px;
+  }
+}
+
+@media all and (max-width: 991px) {
+  .largest-brand-wrap {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .learn-anytime .learn-anytime-row .left-col {
+    padding-left: 50px;
+  }
+
+  .learn-anytime .learn-anytime-row .right-col {
+    display: none;
+  }
 }
 
 .navbar-laravel {
