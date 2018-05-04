@@ -93,14 +93,14 @@
             <div class="item">
               <h2>ACADEMIC COURSES</h2>
               <p>Courses with details curriculum from expert tutors.</p>
-              <a href="" class="primary-btn btn btn-size-2x">Discover</a>
+              <a href="" class="btn primary-btn">Discover</a>
             </div>
           </div>
           <div class="col-md-6 col-xs-12 skill-col">
             <div class="item">
               <h2>SPECIAL COURSES</h2>
               <p>Special courses helps students/professionals to develop their skills.</p>
-              <a href="" class="primary-btn btn btn-size-2x">Discover</a>
+              <a href="" class="btn primary-btn">Discover</a>
             </div>
           </div>
         </div>
@@ -108,15 +108,15 @@
     </div>
   </section>
   <section id="find-note-section">
-    <div class='find-note-container'>
-      <h2 class='text-center'>
+    <div class='find-note-container text-center'>
+      <h2>
         Find Notes and share or earn from your note
       </h2>
-      <p class='text-center'>
+      <p>
         Note from top student are uploaded here. You can find desired notes or you can share your notes for free or earn over 5K per month from selling your notes.
       </p>
-      <div class='text-center'>
-        <a href='#' class='btn primary-btn btn-size-2x'> Discover </a>
+      <div class="form-group">
+        <a href='#' class='btn primary-btn '> Discover </a>
       </div>
     </div>
   </section>
@@ -133,7 +133,7 @@
               to connect with others. You can share your thoughts by answering questions and
               build your reputation.
             </p>
-            <a href="#" class="btn primary-btn btn-size-2x">Join Question & Answer Blog</a>
+            <a href="#" class="btn primary-btn ">Join Question & Answer Blog</a>
           </div>
           <div class="col-md-6 col-xs-12 right-col">
             <h3>LATEST ADDITION IN QUESTION BANK</h3>
@@ -181,7 +181,7 @@
   </section>
 
   <section id='community-section'>
-    <h2 class='primary-header text-center'> Our Amazing community </h2>
+    <h2> Our Amazing community </h2>
     <div class='slider-items'>
       <div class='slider-item'>
         <p>
@@ -190,7 +190,7 @@
         </p>
         <div class='user-section clearfix'>
           <div class='avatar'>
-            img
+            <img src="{{asset('images/newaj.jpg')}}" class="img-responsive" alt="">
           </div>
           <div class='information'>
             <h4> Nawaj Uddin </h4>
@@ -207,18 +207,18 @@
       Teach what you love. Edutube gives you the opperuanity to create courses, take live classes, help students by solving their problems and selling your notes suggestion online. Join international tutor community and build your profile.
     </p>
     <div class='text-center'>
-      <a href='#' class='btn primary-btn btn-size-2x'> Become a Tutor </a>
+      <a href='#' class='btn primary-btn '> Become a Tutor </a>
     </div>
   </section>
-  <section id="help-center-section">
-    <h2 class='primary-header text-center'>
+  <section id="help-center-section" class="text-center">
+    <h2 class='primary-header'>
       Help Center
     </h2>
-    <p class='text-center'>
+    <p>
       If you have any queries, we are here to help you. Ask what you need. We will be at your assistance.
     </p>
-    <div class='text-center'>
-      <a href='#' class='btn primary-btn btn-size-2x'> Report Problem </a>
+    <div class='form-group'>
+      <a href='#' class='btn primary-btn '> Report Problem </a>
     </div>
   </section>
 @stop

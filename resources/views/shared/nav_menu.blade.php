@@ -60,7 +60,9 @@
             <li class="nav-item"><a href="#" class='nav-link'>Live Classes</a></li>
             <li class="nav-item"><a href="#" class='nav-link'>Become a Tutor</a></li>
             <li class="nav-item">
-              <a href="#" class='nav-link'><i class="fa fa-shopping-cart"></i></a>
+              <a href="#" class='nav-link'>
+                <img src="{{asset('images/shopping-cart.jpg')}}" class="img-responsive" alt="">
+              </a>
             </li>
             @if(Auth::check())
               <li class='nav-item'>
@@ -70,10 +72,10 @@
               </li>
             @else
               <li class="nav-item">
-                <a style="margin-top: 5px" data-target="#login-modal" data-toggle="modal" class="btn default-btn">Sign in</a>
+                <a style="margin-top: 5px" data-target="#login-modal" data-toggle="modal" class="btn default-btn-sm">Sign in</a>
               </li>
               <li class="nav-item">
-                <a style="margin-top: 5px" data-target="#registration-modal" data-toggle="modal" class="primary-btn btn">Sign up</a>
+                <a style="margin-top: 5px" data-target="#registration-modal" data-toggle="modal" class="btn primary-btn-sm">Sign up</a>
               </li>
             @endif
           </ul>

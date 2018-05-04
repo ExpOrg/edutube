@@ -13,6 +13,8 @@
 <link rel="shortcut icon" href="/favicon.ico">
 <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 
+<!-- Google font CDN -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 <!-- Bootstrap CDN -->
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
 <!-- Fontawesome CDN -->
