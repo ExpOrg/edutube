@@ -1,6 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);/* Color name declaration */
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);/* Google fonts */
+
+/* Color name declaration */
 
 /* Social icon color */
+
+/* Google fonts */
 
 /* Color name declaration */
 
@@ -9,14 +13,16 @@
 /* Bootstrap customization */
 
 .edutube-navbar-brand {
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
-  font-size: 18px !important;
-  letter-spacing: 1px;
+  font-size: 24px !important;
+  color: #333 !important;
 }
 
 .navbar-nav .nav-item .nav-link {
-  font-size: 13px;
-  color: #3a3a3a !important;
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 14px;
+  color: #333333 !important;
 }
 
 /* Navbar customization */
@@ -37,10 +43,10 @@
 
 .navbar-form .navbar-search-input {
   width: 100%;
-  border: solid 2px #ececec;
+  border: solid 2px #e3e3e3;
   background: #f1f1f1;
   border-radius: 4px;
-  padding: 6px 40px 6px 15px;
+  padding: 8px 40px 8px 15px;
   outline: none;
   font-size: 11px;
 }
@@ -95,7 +101,8 @@
 }
 
 .carousel-inner .carousel-item .carousel-caption h5 {
-  font-size: 25px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
 }
 
 .carousel-indicators li {
@@ -143,13 +150,15 @@
 }
 
 .brand-item .item-text h4 {
+  font-family: "Open Sans", sans-serif;
   margin-bottom: 0;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 .brand-item .item-text p {
-  font-size: 13px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
 }
 
 .landing-top-section {
@@ -166,20 +175,23 @@
 }
 
 .learn-anytime .learn-anytime-row .left-col h4 {
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
-  color: #323232;
-  font-size: 22px;
+  color: #333333;
+  font-size: 20px;
 }
 
 .learn-anytime .learn-anytime-row .left-col h5 {
+  font-family: #ef294a;
   font-size: 16px;
-  color: #3e3e3e;
+  color: #333333;
 }
 
 .learn-anytime .learn-anytime-row .left-col p {
-  color: #3e3e3e;
-  font-size: 13px;
-  line-height: 15px;
+  font-family: "Open Sans", sans-serif;
+  color: #333333;
+  font-size: 14px;
+  line-height: 16px;
 }
 
 .learn-anytime .learn-anytime-row .right-col {
@@ -207,13 +219,15 @@
 }
 
 .skill-item-wrap .skill-row .skill-col .item h2 {
+  font-family: "Open Sans", sans-serif;
   font-size: 18px;
   font-weight: bold;
 }
 
 .skill-item-wrap .skill-row .skill-col .item p {
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
-  color: #3e3e3e;
+  color: #333333;
   min-height: 50px;
 }
 
@@ -231,24 +245,27 @@
 }
 
 #find-note-section .find-note-container h2 {
+  font-family: "Open Sans", sans-serif;
   font-size: 18px;
   font-weight: bold;
 }
 
 #find-note-section .find-note-container p {
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
-  color: #3e3e3e;
+  color: #333333;
 }
 
 #become-tutor-section {
   padding: 60px 75px;
-  background-image: url("/images/slider2.jpg");
+  background-image: url("/images/bg-1.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  color: #ffffff;
+  color: #fff;
 }
 
 #become-tutor-section p {
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
 }
 
@@ -257,6 +274,7 @@
 }
 
 #help-center-section p {
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
 }
 
@@ -269,11 +287,19 @@
   padding: 60px 75px;
 }
 
+#community-section h2 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
 #community-section .slider-items .slider-item {
   padding: 20px 30px;
 }
 
 #community-section p {
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   text-align: center;
 }
@@ -298,13 +324,16 @@
 }
 
 #community-section .user-section .information {
+  font-family: "Open Sans", sans-serif;
   text-align: center;
-  font-size: 13px;
+  font-size: 12px;
+  padding-top: 5px;
 }
 
 #community-section .user-section .information h4 {
+  font-family: "Open Sans", sans-serif;
   margin-bottom: 4px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 /* Login and registration modal and content design */
@@ -433,18 +462,21 @@ label.input-label {
 }
 
 .footer-wrap footer .footer-row .footer-col .edutube h3 {
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-weight: bold;
 }
 
 .footer-wrap footer .footer-row .footer-col .edutube p {
+  font-family: "Open Sans", sans-serif;
   font-size: 12px;
-  color: #3e3e3e;
+  color: #333333;
 }
 
 .footer-wrap footer .footer-row .footer-col .get-to-know h4,
 .footer-wrap footer .footer-row .footer-col .learn h4,
 .footer-wrap footer .footer-row .footer-col .partner h4 {
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   font-weight: bold;
 }
@@ -462,7 +494,7 @@ label.input-label {
 .footer-wrap footer .footer-row .footer-col .partner ul li a {
   display: inline-block;
   cursor: pointer;
-  color: #3e3e3e;
+  color: #5c5c5c;
   font-size: 12px;
   margin-bottom: 10px;
 }
@@ -480,8 +512,9 @@ label.input-label {
 
 .footer-wrap .footer-bottom-section .left-section {
   float: left;
-  color: #999999;
-  font-size: 13px;
+  color: #808080;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
   padding-top: 4px;
 }
 
@@ -503,10 +536,11 @@ label.input-label {
 
 .footer-wrap .footer-bottom-section .right-section ul li a {
   position: relative;
-  color: #999999;
+  color: #808080;
   text-decoration: none;
   padding: 4px;
-  font-size: 13px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
 }
 
 .footer-wrap .footer-bottom-section .right-section ul li a:hover {
@@ -541,14 +575,16 @@ label.input-label {
 }
 
 .question-blog .question-blog-container .question-blog-row .left-col h4 {
+  font-family: "Open Sans", sans-serif;
   padding-top: 25px;
   font-size: 16px;
   font-weight: bold;
 }
 
 .question-blog .question-blog-container .question-blog-row .left-col p {
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
-  color: #3e3e3e;
+  color: #333333;
   margin-bottom: 30px;
 }
 
@@ -559,8 +595,10 @@ label.input-label {
 }
 
 .question-blog .question-blog-container .question-blog-row .right-col h3 {
-  font-size: 18px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 22px;
   font-weight: bold;
+  text-transform: uppercase;
   padding: 20px 30px;
   margin: 0;
 }
@@ -593,12 +631,14 @@ label.input-label {
 }
 
 .question-blog .question-blog-container .question-blog-row .right-col ul li .question-item .item-content h5 {
-  font-size: 13px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
   font-weight: bold;
 }
 
 .question-blog .question-blog-container .question-blog-row .right-col ul li .question-item .item-content p {
-  font-size: 13px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
   margin-bottom: 10px;
 }
 
@@ -624,8 +664,9 @@ label.input-label {
   padding: 2px 20px;
   background-color: #f1f1f1;
   border-radius: 15px;
+  font-family: "Open Sans", sans-serif;
   font-size: 12px;
-  color: #3a3a3a;
+  color: #333333;
 }
 
 .question-blog .question-blog-container .question-blog-row .right-col .see-all {
@@ -635,12 +676,15 @@ label.input-label {
 .question-blog .question-blog-container .question-blog-row .right-col .see-all a {
   color: #ef294a;
   cursor: pointer;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
 }
 
 .question-blog .question-blog-container .question-blog-row .right-col .see-all a:hover {
   text-decoration: underline;
 }
+
+/* Google fonts */
 
 /* Color name declaration */
 
@@ -657,48 +701,67 @@ label.input-label {
   font-family: 'Railway';
 }
 
-.primary-header {
+.primary-header,
+.primary-header-white {
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
   font-size: 22px;
   text-transform: uppercase;
   margin-bottom: 15px;
-  color: #323232;
+}
+
+.primary-header {
+  color: #333333;
 }
 
 .primary-header-white {
-  font-weight: bold;
-  font-size: 22px;
-  text-transform: uppercase;
-  margin-bottom: 15px;
   color: #fff;
 }
 
 /* Button design for edutube */
 
-.primary-btn {
-  font-size: 13px !important;
+.primary-btn,
+.default-btn {
+  min-width: 180px;
+  min-height: 40px;
+  display: inline-block;
+  text-align: center;
+  line-height: 28px !important;
+  font-size: 15px !important;
+}
+
+.primary-btn,
+.primary-btn-sm {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+  font-size: 14px !important;
   padding: 4px 16px !important;
   color: #fff !important;
   background-color: #ef294a;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.25) !important;
+  border-bottom: 2px solid #d01e3c !important;
 }
 
-.primary-btn:hover {
+.primary-btn:hover,
+.primary-btn-sm:hover {
   color: #fff;
   cursor: pointer;
   text-decoration: none;
   border-bottom: 2px solid #ef294a !important;
 }
 
-.default-btn {
-  font-size: 13px !important;
+.default-btn,
+.default-btn-sm {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+  font-size: 14px !important;
   padding: 4px 16px !important;
   color: #333333 !important;
   background-color: #f1f1f1;
   border-bottom: 2px solid #c7c7c7 !important;
 }
 
-.default-btn:hover {
+.default-btn:hover,
+.default-btn-sm:hover {
   color: #333333;
   cursor: pointer;
   text-decoration: none;
@@ -744,15 +807,6 @@ label.input-label {
   font-weight: bold;
 }
 
-.btn-size-2x {
-  min-width: 180px;
-  min-height: 40px;
-  display: inline-block;
-  text-align: center;
-  line-height: 28px !important;
-  font-size: 15px !important;
-}
-
 /* Search button */
 
 .search-group-btn .search-btn-input {
@@ -761,7 +815,7 @@ label.input-label {
   border: 0 none;
   outline: 0 none;
   font-size: 10px;
-  border: 1px solid #ececec;
+  border: 1px solid #e3e3e3;
   border-right: 0;
   outline: none;
 }

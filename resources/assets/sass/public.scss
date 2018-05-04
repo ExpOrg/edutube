@@ -12,29 +12,39 @@
   font-family: 'Railway';
 }
 
-.primary-header {
+.primary-header, .primary-header-white {
+  font-family: $primary-font;
   font-weight: bold;
   font-size: 22px;
   text-transform: uppercase;
   margin-bottom: 15px;
-  color: #323232;
+}
+
+.primary-header {
+  color: $icon-color;
 }
 
 .primary-header-white {
-  font-weight: bold;
-  font-size: 22px;
-  text-transform: uppercase;
-  margin-bottom: 15px;
   color: $white;
 }
 
 /* Button design for edutube */
-.primary-btn {
-  font-size: 13px !important;
+.primary-btn, .default-btn {
+  min-width: 180px;
+  min-height: 40px;
+  display: inline-block;
+  text-align: center;
+  line-height: 28px !important;
+  font-size: 15px !important;
+}
+.primary-btn, .primary-btn-sm {
+  font-family: $primary-font;
+  font-weight: normal;
+  font-size: 14px !important;
   padding: 4px 16px !important;
   color: $white !important;
   background-color: $pink;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.25) !important;
+  border-bottom: 2px solid $deep-pink !important;
   &:hover {
     color: $white;
     cursor: pointer;
@@ -43,14 +53,16 @@
   }
 }
 
-.default-btn {
-  font-size: 13px !important;
+.default-btn, .default-btn-sm {
+  font-family: $primary-font;
+  font-weight: normal;
+  font-size: 14px !important;
   padding: 4px 16px !important;
-  color: #333333 !important;
+  color: $icon-color !important;
   background-color: $secondary-color;
   border-bottom: 2px solid #c7c7c7 !important;
   &:hover {
-    color: #333333;
+    color: $icon-color;
     cursor: pointer;
     text-decoration: none;
     border-bottom: 2px solid $secondary-color !important;
@@ -90,16 +102,6 @@
     margin-right: 25px;
     font-weight: bold;
   }
-}
-
-//Medium button
-.btn-size-2x {
-  min-width: 180px;
-  min-height: 40px;
-  display: inline-block;
-  text-align: center;
-  line-height: 28px !important;
-  font-size: 15px !important;
 }
 
 /* Search button */
