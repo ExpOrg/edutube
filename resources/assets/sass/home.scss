@@ -94,7 +94,6 @@
 .carousel-inner {
   max-height: 450px;
   .carousel-item {
-    position: relative;
     .carousel-caption {
       position: absolute;
       left: 0;
@@ -150,7 +149,7 @@
     }
   }
   .item-text {
-    float: left;
+    padding-left: 70px;
     h4 {
       font-family: $primary-font;
       margin-bottom: 0;
@@ -206,9 +205,10 @@
 /* Skill */
 .skill-item-wrap {
   .skill-row {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
     .skill-col {
+      margin-bottom: 15px;
       .item {
         padding: 40px 25px;
         background: $secondary-color;
@@ -236,12 +236,13 @@
 
 #find-note-section {
   background: $secondary-color;
-  padding: 60px 75px;
+  padding: 4% 6%;
   .find-note-container {
     background: $white;
     box-shadow: 0px 0px 5px #cccccc;
     border-radius: 3px;
-    padding: 40px 200px;
+    padding: 5% 15%;
+    //padding: 40px 200px;
     h2 {
       font-family: $primary-font;
       font-size: 18px;
@@ -256,10 +257,11 @@
 }
 
 #become-tutor-section {
-  padding: 60px 75px;
+  padding: 6% 7%;
   background-image: url('/images/bg-1.jpg');
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
   color: $white;
   h2 {
 
@@ -271,7 +273,7 @@
 }
 
 #help-center-section {
-  padding: 60px 75px;
+  padding: 5% 7%;
   p {
     font-family: $primary-font;
     font-size: 14px;
@@ -284,7 +286,7 @@
 
 #community-section {
   border-top: solid 1px $secondary-color;
-  padding: 60px 75px;
+  padding: 5% 7%;
   h2 {
     font-family: $primary-font;
     font-size: 20px;
@@ -545,7 +547,7 @@ label {
   .question-blog-container {
     .question-blog-row {
       .left-col {
-        padding-left: 105px;
+        padding-left: 10%;
         padding-top: 35px;
         padding-bottom: 35px;
         min-height: 310px;
