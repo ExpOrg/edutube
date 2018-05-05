@@ -43,12 +43,12 @@ class LoginController extends Controller
     public function login(Request $request) {
         $auth = false;
         $credentials = $request->only('email', 'password');
-
+        //return response()->json(['response' => 'data']);
         if (Auth::attempt($credentials, $request->has('remember'))) {
             $auth = true;
         }
 
-        if ($request->ajax()) {
+        if ($request->is('api/*') || $request->ajax()) {
             return response()->json([
                 'success' => $auth,
                 'intended' => URL::previous(),
