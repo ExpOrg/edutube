@@ -8,8 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
-use Auth;
-use URL;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -40,7 +39,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('auth:api')->except('register');
     }
 
     /**
@@ -82,16 +81,31 @@ class RegisterController extends Controller
                   'message' => 'Validation failed'
                 ]);
         }
-        else{
+        else { 
             $user = $this->create($request->all());
-            Auth::login($user);
-            if (Auth::user()){
-                return response()->json([
-                    'success' => true,
-                    'intended' => URL::previous(),
-                    'message' => "Signup success!"
-                ]);
+            $credentials = $request->only('email', 'password');
+            if (! $token = auth()->attempt($credentials)) {
+              return response()->json(['message' => 'Unauthorized', 'success' => false], 401);
             }
+          return $this->respondWithToken($token);
         }
+    }
+
+    /**
+     * Get the token array structure.
+     *
+     * @param  string $token
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    protected function respondWithToken($token)
+    {
+        return response()->json([
+            'token' => $token,
+            'user' => auth()->user(),
+            'success' => true,
+            'message' => 'auth success',
+            'expires_in' => auth()->factory()->getTTL() * 60
+        ]);
     }
 }

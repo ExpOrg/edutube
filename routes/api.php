@@ -16,10 +16,26 @@ header( 'Access-Control-Allow-Headers: Authorization, Content-Type' );
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
-Route::post('register', 'Auth\RegisterController@register');
-Route::post('login', 'Auth\LoginController@login');
+// Route::post('register', 'Auth\RegisterController@register');
+// Route::post('login', 'Auth\LoginController@login');
+
+
+
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'auth'
+
+], function ($router) {
+
+    Route::post('login', 'Auth\LoginController@login');
+    Route::post('register', 'Auth\RegisterController@register');
+    Route::post('recover', 'Auth\ForgotPasswordController@recover');
+    Route::post('refresh', 'Auth\RegisterController@refresh');
+    Route::post('me', 'Auth\RegisterController@me');
+
+});
 

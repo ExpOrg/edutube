@@ -5,8 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
-use Auth;
-use URL;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -37,27 +36,18 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        $this->middleware('auth:api')->except('login');
     }
 
     public function login(Request $request) {
         $auth = false;
         $credentials = $request->only('email', 'password');
-        //return response()->json(['response' => 'data']);
-        if (Auth::attempt($credentials, $request->has('remember'))) {
-            $auth = true;
+
+        if (! $token = auth()->attempt($credentials)) {
+            return response()->json(['success' => false, 'message' => 'Invalid email or password!'], 401);
         }
 
-        if ($request->is('api/*') || $request->ajax()) {
-            return response()->json([
-                'success' => $auth,
-                'intended' => URL::previous(),
-                'message' => "Invalid email or password!"
-            ]);
-        } else {
-            return redirect()->intended(URL::route('dashboard'));
-        }
-        return redirect(URL::route('login_page'));
+        return $this->respondWithToken($token);
     }
 
     public function logout () {
@@ -65,5 +55,43 @@ class LoginController extends Controller
         auth()->logout();
         // redirect to homepage
         return redirect('/');
+    }
+
+     /**
+     * Refresh a token.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function refresh()
+    {
+        return $this->respondWithToken(auth()->refresh());
+    }
+
+    /**
+     * Get the token array structure.
+     *
+     * @param  string $token
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    protected function respondWithToken($token)
+    {
+        return response()->json([
+            'token' => $token,
+            'user' => auth()->user(),
+            'success' => true,
+            'message' => 'auth success',
+            'expires_in' => auth()->factory()->getTTL() * 60
+        ]);
+    }
+
+    /**
+     * Get the guard to be used during authentication.
+     *
+     * @return \Illuminate\Contracts\Auth\Guard
+     */
+    public function guard()
+    {
+        return Auth::guard();
     }
 }
