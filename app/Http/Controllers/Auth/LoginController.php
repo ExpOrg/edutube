@@ -50,6 +50,16 @@ class LoginController extends Controller
         return $this->respondWithToken($token);
     }
 
+    /**
+    * Get current auth user
+    *
+    * @return user details
+    */
+
+    public function me() {
+      return auth()->user();
+    }
+
     public function logout () {
         //logout user
         auth()->logout();

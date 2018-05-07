@@ -35,7 +35,7 @@ Route::group([
     Route::post('register', 'Auth\RegisterController@register');
     Route::post('recover', 'Auth\ForgotPasswordController@recover');
     Route::post('refresh', 'Auth\RegisterController@refresh');
-    Route::post('me', 'Auth\RegisterController@me');
-
+    Route::get('me', 'Auth\LoginController@me');
+    Route::post('update_profile', 'API\v1\UserController@update_profile');
 });
 
