@@ -32,6 +32,7 @@ Route::group([
 ], function ($router) {
 
     Route::post('login', 'Auth\LoginController@login');
+    Route::post('social_login', 'Auth\LoginController@social_login');
     Route::post('register', 'Auth\RegisterController@register');
     Route::post('recover', 'Auth\ForgotPasswordController@recover');
     Route::post('refresh', 'Auth\RegisterController@refresh');

@@ -6,6 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use App\User;
+use App\Models\Authorization;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class LoginController extends Controller
 {
@@ -36,7 +40,46 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api')->except('login');
+        $this->middleware('auth:api')->except(['login', 'social_login']);
+    }
+
+    /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param  array  $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6|confirmed',
+        ]);
+    }
+
+    /**
+    * Social login
+    *
+    */
+    public function social_login(Request $request) {
+        $user = Authorization::find_auth_user($request->id, $request->email);
+        if(!$user) {
+          $user_data = $request->only('name', 'email');
+          $user_data['password'] = '369258741';
+          $user_data['password_confirmation'] = '369258741';
+          $validation = $this->validator($user_data);
+          if($validation->fails()) {
+            return response()->json(['success' => false, 'message' => 'Unable to login', 'errors' => $validation->errors()]);  
+          }
+          else {
+             $user = User::create($user_data);
+             Authorization::create(['user_id' => $user->id, 'provider' => $request->provider, 'uid' => $request->id, 'email' => $request->email, 'picture' => $request->picture, 'token' => $request->token]);
+          }
+        }
+        $token = JWTAuth::fromUser($user);
+        auth()->login($user);
+        return $this->respondWithToken($token);
     }
 
     public function login(Request $request) {
@@ -44,7 +87,7 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (! $token = auth()->attempt($credentials)) {
-            return response()->json(['success' => false, 'message' => 'Invalid email or password!'], 401);
+            return response()->json(['success' => false, 'message' => 'Invalid email or password!']);
         }
 
         return $this->respondWithToken($token);
