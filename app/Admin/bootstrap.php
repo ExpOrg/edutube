@@ -17,6 +17,11 @@
  * Admin::js('/packages/prettydocs/js/main.js');
  *
  */
+use App\Admin\Extensions\CustomActions;
+use Encore\Admin\Grid\Column;
 
 Encore\Admin\Form::forget(['map', 'editor']);
 app('view')->prependNamespace('admin', resource_path('views/admin'));
+
+Column::define('__actions__', CustomActions::class);
+
