@@ -34,4 +34,31 @@ class UserController extends Controller
             return response()->json(['success' => false, 'message' => "User not found!"]);
         }
     }
+
+    /**
+     * Upload user avatar.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function upload_avatar(Request $request) {
+        $user = auth()->user();
+        $this->validate($request, [
+          'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        if ($request->hasFile('avatar')) {
+          $image = $request->file('avatar');
+          $name = time().'.'.$image->getClientOriginalExtension();
+          $destinationPath = public_path('/upload/users/');
+          $image->move($destinationPath, $name);
+          $avatar_path = '/upload/users/'.$name;
+          $user->fill(['avatar' => $avatar_path]);
+          if($user->save()) {
+            return response()->json(['success' => true, 'message' => "Profile imformation saved!", 'avatar' => $avatar_path ]);
+          }
+          else {
+            return response()->json(['success' => false, 'message' => 'Unable to upload image']);
+          }
+        }
+    }
 }

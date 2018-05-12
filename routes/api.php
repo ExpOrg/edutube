@@ -38,5 +38,6 @@ Route::group([
     Route::post('refresh', 'Auth\RegisterController@refresh');
     Route::get('me', 'Auth\LoginController@me');
     Route::post('update_profile', 'API\v1\UserController@update_profile');
+    Route::post('upload_avatar', 'API\v1\UserController@upload_avatar');
 });
 
