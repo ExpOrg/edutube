@@ -78,6 +78,7 @@ class BlogController extends Controller
         return Admin::grid(Blog::class, function (Grid $grid) {
 
             $grid->id('ID')->sortable();
+            $grid->image()->image();
             $grid->title('Title');
             $states = [
                 'on'  => ['value' => 1, 'text' => 'YES', 'color' => 'primary'],
@@ -109,9 +110,10 @@ class BlogController extends Controller
         return Admin::form(Blog::class, function (Form $form) {
 
             $form->text('title');
-            $form->select('uploader')->options(User::all()->pluck('name', 'id'));
+            $form->select('user_id')->options(User::all()->pluck('name', 'id'));
             $form->text('subtitle');
             $form->editor('content');
+            $form->image('image')->move('/blogs');
             $form->switch('status', 'Publish');
 
         });

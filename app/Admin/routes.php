@@ -13,6 +13,6 @@ Route::group([
     $router->get('/', 'HomeController@index');
     $router->resource('website_users', UserController::class);
     $router->resource('blogs', BlogController::class);
-
+    $router->post('auth/login', '\App\Admin\Controllers\CustomAuthController@postLogin')->middleware(config('admin.route.middleware'));
 
 });

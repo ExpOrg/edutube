@@ -119,8 +119,9 @@ class UserController extends Controller
             $form->model()->makeVisible('password');
             $form->text('name')/*->rules('required')*/;
             $form->email('email')->rules('required');
-            $form->password('password')->rules('confirmed');
-            $form->password('password_confirmation');
+//            $form->password('password')->rules('confirmed');
+//            $form->password('password_confirmation');
+            $form->image('avatar')->move('/users');
             $form->textarea('about_me');
             $form->text('degree');
             $form->text('institution');
