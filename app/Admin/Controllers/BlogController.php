@@ -113,7 +113,7 @@ class BlogController extends Controller
             $form->select('user_id')->options(User::all()->pluck('name', 'id'));
             $form->text('subtitle');
             $form->editor('content');
-            $form->image('image')->move('/blogs');
+            $form->image('image')->move('/uploads/blogs');
             $form->switch('status', 'Publish');
 
         });

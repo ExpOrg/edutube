@@ -65,8 +65,8 @@ return [
 
         'admin' => [
             'driver' => 'local',
-            'root' => public_path('uploads'),
-            'url' => '/uploads',
+            'root' => public_path(''),
+            'url' => '/public',
             'visibility' => 'public',
         ],
 
