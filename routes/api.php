@@ -39,5 +39,11 @@ Route::group([
     Route::get('me', 'Auth\LoginController@me');
     Route::post('update_profile', 'API\v1\UserController@update_profile');
     Route::post('upload_avatar', 'API\v1\UserController@upload_avatar');
+
+    //################### EDUCATION ROUTES ############################
+
+    Route::get('educations', 'API\v1\EducationController@index');
+    Route::post('education/create', 'API\v1\EducationController@create');
+    Route::post('education/{id}/update', 'API\v1\EducationController@update');
 });
 

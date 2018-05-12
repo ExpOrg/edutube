@@ -17,7 +17,7 @@ class User extends Authenticatable implements JWTSubject
      */
     protected $fillable = [
         'name', 'email', 'password', 'about_me', 'phone', 'country', 'city',
-        'degree', 'institution', 'avatar'
+        'degree', 'institution', 'avatar', 'user_type'
     ];
 
     /**
@@ -49,5 +49,9 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    public function educations() {
+        return $this->hasMany('App\Models\Education');
     }
 }
