@@ -9,7 +9,7 @@
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-md-3 col-lg-3" align="center"> <img alt="User Pic" src="{{ asset('/uploads/'.$user->avatar) }}" class="img-circle img-responsive" style="height: 100px; width: 100px"> </div>
+                        <div class="col-md-3 col-lg-3" align="center"> <img alt="User Pic" src="{{ asset($user->avatar) }}" class="img-circle img-responsive" style="height: 100px; width: 100px"> </div>
 
                         <div class=" col-md-9 col-lg-9 ">
                             <table class="table table-user-information">

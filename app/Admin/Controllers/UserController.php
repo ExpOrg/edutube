@@ -121,7 +121,7 @@ class UserController extends Controller
             $form->email('email')->rules('required');
 //            $form->password('password')->rules('confirmed');
 //            $form->password('password_confirmation');
-            $form->image('avatar')->move('/users');
+//            $form->image('avatar')->move('/users');
             $form->textarea('about_me');
             $form->text('degree');
             $form->text('institution');
