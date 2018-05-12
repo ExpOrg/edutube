@@ -11,7 +11,8 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index');
-    $router->resource('admin/website_users', UserController::class);
+    $router->resource('website_users', UserController::class);
+    $router->resource('blogs', BlogController::class);
 
 
 });
