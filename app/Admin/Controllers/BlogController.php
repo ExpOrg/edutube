@@ -33,6 +33,14 @@ class BlogController extends Controller
         });
     }
 
+    public function show($id){
+        return Admin::content(function (Content $content) use ($id) {
+            $blog = Blog::find($id);
+
+            $content->body(view('admin.blogs.show')->with('blog', $blog));
+        });
+    }
+
     /**
      * Edit interface.
      *
@@ -78,7 +86,7 @@ class BlogController extends Controller
         return Admin::grid(Blog::class, function (Grid $grid) {
 
             $grid->id('ID')->sortable();
-            $grid->image()->image();
+            //$grid->image()->image();
             $grid->title('Title');
             $states = [
                 'on'  => ['value' => 1, 'text' => 'YES', 'color' => 'primary'],
