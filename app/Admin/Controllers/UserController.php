@@ -25,8 +25,8 @@ class UserController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('Website Users');
+            $content->description('User List');
 
             $content->body($this->grid());
         });
@@ -41,9 +41,10 @@ class UserController extends Controller
     public function edit($id)
     {
         return Admin::content(function (Content $content) use ($id) {
+            $user = User::find($id);
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('Edit User');
+            $content->description($user->name);
 
             $content->body($this->form()->edit($id));
         });
@@ -96,12 +97,11 @@ class UserController extends Controller
 
             $grid->filter(function (Grid\Filter $filter) {
                 $filter->equal('name');
+                $filter->equal('user_type')->select(['student' => 'Student', 'teacher' => 'Teacher']);
                 $filter->equal('email');
                 $filter->equal('country');
                 $filter->equal('city');
                 $filter->equal('created_at')->datetime();
-                $filter->between('updated_at')->datetime();
-
             });
 
         });
@@ -116,10 +116,12 @@ class UserController extends Controller
     {
         return Admin::form(User::class, function (Form $form) {
             $form->model()->makeVisible('password');
-            $form->text('name')/*->rules('required')*/;
+            $form->text('name')->rules('required');
+            $form->select('user_type')->options(array('student' => 'Student', 'Seacher' => 'Teacher'))->rules('required');
             $form->email('email')->rules('required');
             $form->password('password')->rules('confirmed');
             $form->password('password_confirmation');
+            $form->image('avatar')->move('/uploads/users');
             $form->textarea('about_me');
             $form->text('degree');
             $form->text('institution');

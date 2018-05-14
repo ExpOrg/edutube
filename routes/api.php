@@ -45,5 +45,12 @@ Route::group([
     Route::get('educations', 'API\v1\EducationController@index');
     Route::post('education/create', 'API\v1\EducationController@create');
     Route::post('education/{id}/update', 'API\v1\EducationController@update');
+
+    //################### COURSE ROUTES ############################
+
+    Route::get('courses', 'API\v1\CourseController@index');
+    Route::post('course/create', 'API\v1\CourseController@create');
+    Route::post('course/{id}/update', 'API\v1\CourseController@update');
+    Route::get('courses/{id}', 'API\v1\CourseController@show');
 });
 
