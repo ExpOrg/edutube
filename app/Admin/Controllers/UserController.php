@@ -115,12 +115,20 @@ class UserController extends Controller
     protected function form()
     {
         return Admin::form(User::class, function (Form $form) {
-            $form->model()->makeVisible('password');
+
+
             $form->text('name')->rules('required');
-            $form->select('user_type')->options(array('student' => 'Student', 'Seacher' => 'Teacher'))->rules('required');
+            $form->select('user_type')->options(['student' => 'Student', 'teacher' => 'Teacher'])->rules('required');
             $form->email('email')->rules('required');
-            $form->password('password')->rules('confirmed');
-            $form->password('password_confirmation');
+            $form->password('password')->rules('required|confirmed')
+                ->default(function ($form) {
+                    return $form->model()->password;
+                });
+                
+            $form->password('password_confirmation')->rules('required')
+                ->default(function ($form) {
+                    return $form->model()->password;
+                });
             $form->image('avatar')->move('/uploads/users');
             $form->textarea('about_me');
             $form->text('degree');
@@ -128,6 +136,12 @@ class UserController extends Controller
             $form->text('country');
             $form->text('city');
             $form->text('phone');
+            $form->saving(function (Form $form) {
+
+                if ($form->password && $form->model()->password != $form->password) {
+                    $form->password = bcrypt($form->password);
+                }
+            });
             $form->ignore(['password_confirmation']);
         });
     }

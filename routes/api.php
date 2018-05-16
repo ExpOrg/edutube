@@ -51,6 +51,13 @@ Route::group([
     Route::get('courses', 'API\v1\CourseController@index');
     Route::post('course/create', 'API\v1\CourseController@create');
     Route::post('course/{id}/update', 'API\v1\CourseController@update');
-    Route::get('courses/{id}', 'API\v1\CourseController@show');
+    Route::get('courses/{id}', 'API\v1\CourseController@show'); 
+    Route::post('courses/{id}/upload_file', 'API\v1\CourseController@upload_file');
+
+    //################### EXPERIENCE ROUTES ############################
+
+    Route::get('experiences', 'API\v1\ExperienceController@index');
+    Route::post('experience/create', 'API\v1\ExperienceController@create');
+    Route::post('experience/{id}/update', 'API\v1\ExperienceController@update');
 });
 

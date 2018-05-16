@@ -17,7 +17,7 @@ class User extends Authenticatable implements JWTSubject
      */
     protected $fillable = [
         'name', 'email', 'password', 'about_me', 'phone', 'country', 'city',
-        'degree', 'institution', 'avatar', 'user_type'
+        'degree', 'institution', 'avatar', 'user_type', 'occupation', 'charge'
     ];
 
     /**
@@ -53,6 +53,10 @@ class User extends Authenticatable implements JWTSubject
 
     public function educations() {
         return $this->hasMany('App\Models\Education');
+    }
+
+    public function experiences() {
+        return $this->hasMany('App\Models\Experience');
     }
 
     public function courses() {

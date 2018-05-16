@@ -20,6 +20,8 @@ class AddMoreFieldsToUsersTable extends Migration
             $table->char('country', 64)->nullable();
             $table->char('city', 64)->nullable();
             $table->char('phone', 32)->nullable();
+            $table->char('occupation', 64)->nullable();
+            $table->float('charge')->nullable();
         });
     }
 
