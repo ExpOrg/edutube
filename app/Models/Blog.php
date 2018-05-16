@@ -7,7 +7,6 @@ use Illuminate\Notifications\Notifiable;
 
 class Blog extends Model
 {
-    use Notifiable;
 
     protected $fillable = [
         'image','title', 'subtitle', 'content', 'status', 'user_id'

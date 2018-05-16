@@ -101,7 +101,9 @@ class UserController extends Controller
                 $filter->equal('email');
                 $filter->equal('country');
                 $filter->equal('city');
-                $filter->equal('created_at')->datetime();
+                $filter->between('created_at')->datetime();
+                $filter->between('updated_at')->datetime();
+
             });
 
         });
@@ -116,7 +118,7 @@ class UserController extends Controller
     {
         return Admin::form(User::class, function (Form $form) {
 
-
+            $form->model()->makeVisible('password');
             $form->text('name')->rules('required');
             $form->select('user_type')->options(['student' => 'Student', 'teacher' => 'Teacher'])->rules('required');
             $form->email('email')->rules('required');
@@ -124,7 +126,7 @@ class UserController extends Controller
                 ->default(function ($form) {
                     return $form->model()->password;
                 });
-                
+
             $form->password('password_confirmation')->rules('required')
                 ->default(function ($form) {
                     return $form->model()->password;

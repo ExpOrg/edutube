@@ -86,7 +86,6 @@ class BlogController extends Controller
         return Admin::grid(Blog::class, function (Grid $grid) {
 
             $grid->id('ID')->sortable();
-            //$grid->image()->image();
             $grid->title('Title');
             $states = [
                 'on'  => ['value' => 1, 'text' => 'YES', 'color' => 'primary'],
@@ -105,6 +104,14 @@ class BlogController extends Controller
             });
 
             $grid->created_at()->date_format()->sortable();
+
+            $grid->filter(function (Grid\Filter $filter) {
+                $filter->equal('title');
+                $filter->equal('subtitle');
+                $filter->between('created_at')->datetime();
+                $filter->between('updated_at')->datetime();
+
+            });
         });
     }
 
