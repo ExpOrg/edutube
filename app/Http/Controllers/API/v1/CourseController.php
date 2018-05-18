@@ -91,7 +91,9 @@ class CourseController extends Controller
 
     public function add_category(Request $request) {
       $course_id = $request->id;
-      $category_id = $request->category_id; 
+      $category_id = $request->category_id;
+      $category = Category::find($category_id);
+      $category->courses()->attach($course_id);
       return response()->json(['success' => true, 'categories' => '']);
     }
 
@@ -103,13 +105,15 @@ class CourseController extends Controller
     */
 
     public function remove_category(Request $request) {
-      $course_id = $request->id;
-      $category_id = $request->category_id; 
+        $course_id = $request->id;
+        $category_id = $request->category_id;
+        $category = Category::find($category_id);
+        $category->courses()->detach($course_id);
       return response()->json(['success' => true, 'categories' => '']);
     }
 
     /*
-    * Load categoryx of a course
+    * Load category of a course
     * @params course_id
     *
     * @return Category array

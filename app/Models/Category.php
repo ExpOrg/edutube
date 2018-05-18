@@ -10,4 +10,10 @@ class Category extends Model
     protected $fillable = [
         'image','title', 'description'
     ];
+
+    public function courses()
+    {
+        return $this->belongsToMany('App\Models\Course');
+    }
+
 }

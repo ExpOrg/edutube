@@ -23,4 +23,10 @@ class Course extends Model
     public function user() {
         return $this->belongsTo('App\User');
     }
+
+    public function categories()
+    {
+        return $this->belongsToMany('App\Models\Category');
+    }
+
 }
