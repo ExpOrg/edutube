@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Course;
+use App\Models\Category;
 
 class CourseController extends Controller
 {
@@ -39,8 +40,8 @@ class CourseController extends Controller
      */
     protected function show(Request $request)
     {
-        $course = Course::find($request->id)->get();
-        return response()->json(['success' => true, 'course' => $course->first()]);
+        $course = Course::find($request->id);
+        return response()->json(['success' => true, 'course' => $course]);
     }
 
 	/**
@@ -82,6 +83,44 @@ class CourseController extends Controller
     }
 
     /*
+    * Add category to a course
+    * @params course_id, category_id
+    *
+    * @return newlly added category 
+    */
+
+    public function add_category(Request $request) {
+      $course_id = $request->id;
+      $category_id = $request->category_id; 
+      return response()->json(['success' => true, 'categories' => '']);
+    }
+
+    /*
+    * Remove category from a course
+    * @params course_id, category_id
+    *
+    * @return success response
+    */
+
+    public function remove_category(Request $request) {
+      $course_id = $request->id;
+      $category_id = $request->category_id; 
+      return response()->json(['success' => true, 'categories' => '']);
+    }
+
+    /*
+    * Load categoryx of a course
+    * @params course_id
+    *
+    * @return Category array
+    */
+
+    public function get_categories(Request $request) {
+      $categories = Category::select('title', 'id')->get();
+      return response()->json(['success' => true, 'categories' => $categories]);
+    }
+
+    /*
     * Update course record of a student
     * @params course id as integer
     * @return updated data
@@ -94,6 +133,7 @@ class CourseController extends Controller
       else {
         $course = Course::find($request->id);
         $course = $course->fill($request->all());
+        //$course->tools_required = serialize($request->tools_required);
         if($course->save()) {
           return response()->json(['success' => true, 'message' => 'Course has been updated!', 'course' => $course]);
         }
@@ -109,7 +149,7 @@ class CourseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function upload_file(Request $request) {
-        $course = Course::find($request->id)->get()->first();
+        $course = Course::find($request->id);
         $upload_type = $request->upload_type;
         if($upload_type == 'image') {
             $this->validate($request, [

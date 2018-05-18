@@ -91,6 +91,7 @@ class UserController extends Controller
             $grid->id('ID')->sortable();
             $grid->name();
             $grid->email();
+            $grid->user_type();
             $grid->country();
             $grid->city();
             $grid->phone();

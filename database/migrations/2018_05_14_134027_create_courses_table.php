@@ -22,9 +22,9 @@ class CreateCoursesTable extends Migration
             $table->char('language')->nullable();
             $table->boolean('is_test')->default(false);
             $table->char('status', 32)->default('draft');
-            $table->char('tools_required', 255)->nullable();
-            $table->char('who_can_take', 255)->nullable();
-            $table->char('achivement', 255)->nullable();
+            $table->text('tools_required')->nullable();
+            $table->text('who_can_take')->nullable();
+            $table->text('achivement')->nullable();
             $table->char('image', 255)->nullable();
             $table->char('promo_video', 255)->nullable();
             $table->char('price_currency', 32)->nullable();

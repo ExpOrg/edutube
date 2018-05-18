@@ -53,6 +53,9 @@ Route::group([
     Route::post('course/{id}/update', 'API\v1\CourseController@update');
     Route::get('courses/{id}', 'API\v1\CourseController@show'); 
     Route::post('courses/{id}/upload_file', 'API\v1\CourseController@upload_file');
+    Route::post('courses/{id}/add_category', 'API\v1\CourseController@add_category');
+    Route::post('courses/{id}/remove_category', 'API\v1\CourseController@remove_category');
+    Route::get('courses/{id}/categories', 'API\v1\CourseController@get_categories');
 
     //################### EXPERIENCE ROUTES ############################
 
