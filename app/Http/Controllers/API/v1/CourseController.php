@@ -93,8 +93,9 @@ class CourseController extends Controller
       $course_id = $request->id;
       $category_id = $request->category_id;
       $category = Category::find($category_id);
-      $category->courses()->attach($course_id);
-      return response()->json(['success' => true, 'categories' => '']);
+      $course = Course::find($course_id);
+      $category->courses()->sync($course_id);
+      return response()->json(['success' => true]);
     }
 
     /*
@@ -108,8 +109,9 @@ class CourseController extends Controller
         $course_id = $request->id;
         $category_id = $request->category_id;
         $category = Category::find($category_id);
+        $course = Course::find($course_id);
         $category->courses()->detach($course_id);
-      return response()->json(['success' => true, 'categories' => '']);
+      return response()->json(['success' => true]);
     }
 
     /*
