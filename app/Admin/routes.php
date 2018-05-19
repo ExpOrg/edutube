@@ -16,4 +16,5 @@ Route::group([
     $router->post('auth/login', '\App\Admin\Controllers\CustomAuthController@postLogin')->middleware(config('admin.route.middleware'));
     $router->resource('categories', CategoryController::class);
     $router->resource('subjects', SubjectController::class);
+    $router->resource('courses', CourseController::class);
 });
