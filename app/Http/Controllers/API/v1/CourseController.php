@@ -17,7 +17,7 @@ class CourseController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api');
+        $this->middleware('auth:api')->except(['details']);
     }
 
     /**
@@ -42,6 +42,19 @@ class CourseController extends Controller
     {
         $course = Course::find($request->id);
         return response()->json(['success' => true, 'course' => $course]);
+    }
+
+    /**
+     * Get course details user.
+     *
+     * @param  course id
+     * @return Array course details
+     */
+    protected function details(Request $request)
+    {
+        $course = Course::find($request->id);
+        $user = $course->user()->get()->first();
+        return response()->json(['success' => true, 'course' => $course, 'user' => $user]);
     }
 
 	/**
@@ -91,8 +104,7 @@ class CourseController extends Controller
 
     public function add_category(Request $request) {
       $course_id = $request->id;
-      $category_id = $request->category_id;
-      $category = Category::find($category_id);
+      $category = Category::find($request->category_id);
       $course = Course::find($course_id);
       $category->courses()->sync($course_id);
       return response()->json(['success' => true]);
@@ -106,11 +118,11 @@ class CourseController extends Controller
     */
 
     public function remove_category(Request $request) {
-        $course_id = $request->id;
-        $category_id = $request->category_id;
-        $category = Category::find($category_id);
-        $course = Course::find($course_id);
-        $category->courses()->detach($course_id);
+      $course_id = $request->id;
+      $category_id = $request->category_id;
+      $category = Category::find($category_id);
+      $course = Course::find($course_id);
+      $category->courses()->detach($course_id);
       return response()->json(['success' => true]);
     }
 
@@ -122,8 +134,10 @@ class CourseController extends Controller
     */
 
     public function get_categories(Request $request) {
+      $course = Course::find($request->id);
       $categories = Category::select('title', 'id')->get();
-      return response()->json(['success' => true, 'categories' => $categories]);
+      $course_categories = $course->categories()->select('title', 'categories.id')->get();
+      return response()->json(['success' => true, 'categories' => $categories, 'course_categories' => $course_categories]);
     }
 
     /*

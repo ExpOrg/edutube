@@ -52,6 +52,7 @@ Route::group([
     Route::post('course/create', 'API\v1\CourseController@create');
     Route::post('course/{id}/update', 'API\v1\CourseController@update');
     Route::get('courses/{id}', 'API\v1\CourseController@show'); 
+    Route::get('courses/{id}/details', 'API\v1\CourseController@details');
     Route::post('courses/{id}/upload_file', 'API\v1\CourseController@upload_file');
     Route::post('courses/{id}/add_category', 'API\v1\CourseController@add_category');
     Route::post('courses/{id}/remove_category', 'API\v1\CourseController@remove_category');
@@ -62,5 +63,19 @@ Route::group([
     Route::get('experiences', 'API\v1\ExperienceController@index');
     Route::post('experience/create', 'API\v1\ExperienceController@create');
     Route::post('experience/{id}/update', 'API\v1\ExperienceController@update');
+
+    //################### CATEGORY ROUTES ############################
+    Route::get('categories', 'API\v1\CategoryController@index');
+    Route::get('categories/{id}', 'API\v1\CategoryController@show');
 });
+
+// Route::group([
+//     'middleware' => 'api',
+//     'prefix' => 'v1'
+
+// ], function ($router) {
+//     //################### CATEGORY ROUTES ############################
+//     Route::get('categories', 'API\v1\CategoryController@index');
+//     Route::get('categories/{id}', 'API\v1\CategoryController@show');
+// })
 

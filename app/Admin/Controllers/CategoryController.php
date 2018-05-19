@@ -85,15 +85,14 @@ class CategoryController extends Controller
     protected function grid()
     {
         return Admin::grid(Category::class, function (Grid $grid) {
-
             $grid->id('ID')->sortable();
             $grid->title('Title')->sortable();
+            $grid->slug('Slug');
 
             $grid->paginate(20);
             $grid->filter(function (Grid\Filter $filter) {
                 $filter->equal('title');
             });
-
         });
     }
 
