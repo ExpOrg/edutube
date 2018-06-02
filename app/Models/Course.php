@@ -23,6 +23,13 @@ class Course extends Model
     public function user() {
         return $this->belongsTo('App\User');
     }
+    public function subject() {
+        return $this->belongsTo('App\Models\Subject');
+    }
+
+    public function klass() {
+        return $this->belongsTo('App\Models\Klass', 'class_id');
+    }
 
     public function categories()
     {

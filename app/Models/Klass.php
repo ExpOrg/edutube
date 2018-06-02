@@ -10,4 +10,8 @@ class Klass extends Model
     protected $fillable = [
         'name', 'description'
     ];
+
+    public function courses() {
+        return $this->hasMany('App\Models\Course', 'class_id');
+    }
 }

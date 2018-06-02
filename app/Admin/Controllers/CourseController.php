@@ -3,6 +3,8 @@
 namespace App\Admin\Controllers;
 
 use App\Models\Course;
+use App\Models\Subject;
+use App\Models\Klass;
 use App\User;
 
 use Encore\Admin\Form;
@@ -53,7 +55,6 @@ class CourseController extends Controller
     public function show($id){
         return Admin::content(function (Content $content) use ($id) {
             $course = Course::find($id);
-
             $content->body(view('admin.courses.show')->with('course', $course));
         });
     }
@@ -91,7 +92,7 @@ class CourseController extends Controller
                 if ($this->user_id == NULL){
                     return 'Admin';
                 }else{
-                    return "<a href=\"/admin/website_users/{$this->user_id}\">{$this->user->name}</a>";
+                    return "<a href=\"/admin/website_users/{$this->user_id}\">{$this->user->first_name} {$this->user->last_name}</a>";
 
                 }
 
@@ -122,7 +123,9 @@ class CourseController extends Controller
             $form->text('title');
             $form->text('sub_title');
             $form->select('status')->options(['draft' => 'Draft', 'submitted' => 'Submitted', 'approved' => 'Approved'])->rules('required');
-            $form->select('user_id')->options(User::all()->pluck('name', 'id'));
+            $form->select('user_id', 'User')->options(User::selectRaw('id, CONCAT(first_name," ",last_name) as full_name')->pluck('full_name', 'id'));
+            $form->select('class_id', 'Class')->options(Klass::all()->pluck('name', 'id'));
+            $form->select('subject_id', 'Subject')->options(Subject::all()->pluck('title', 'id'));
             $form->text('language');
             $form->text('price_currency');
             $form->number('price');

@@ -9,6 +9,7 @@ use App\Models\Course;
 use App\Models\Category;
 use App\Models\Subject;
 use App\Models\Klass;
+use App\User;
 use DB;
 
 class CourseController extends Controller
@@ -71,11 +72,14 @@ class CourseController extends Controller
     {
         $category = null;
         $course = Course::find($request->id);
-        $user = $course->user()->get()->first();
+        $related_course = Course::where('class_id', $course->class_id)
+            ->where('subject_id', $course->subject_id)
+            ->where('id','!=', $course->id)->get();
+        $user = $course->user()->get();
         if($request->category) {
           $category = Category::findBySlug($request->category);
         }
-        return response()->json(['success' => true, 'course' => $course, 'user' => $user, 'category' => $category]);
+        return response()->json(['success' => true, 'course' => $course, 'user' => $user, 'category' => $category, 'related_course' => $related_course]);
     }
 
 	/**

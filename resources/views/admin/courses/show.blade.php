@@ -15,12 +15,24 @@
                             <table class="table table-user-information">
                                 <tbody>
                                 <tr>
+                                    <td>Author:</td>
+                                    <td>{{ $course->user->first_name }} {{ $course->user->last_name }}</td>
+                                </tr>
+                                <tr>
                                     <td>Title:</td>
                                     <td>{{ $course->title }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Sub Title:</td>
+                                    <td>Subtitle:</td>
                                     <td>{{ $course->sub_title }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Class:</td>
+                                    <td>{{ $course->klass->name }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Subject:</td>
+                                    <td>{{ $course->subject->title }}</td>
                                 </tr>
                                 <tr>
                                     <td>Status:</td>
@@ -31,7 +43,6 @@
                                     <td>{{ $course->language }}</td>
                                 </tr>
 
-                                <tr>
                                 <tr>
                                     <td>Price Currency</td>
                                     <td>{{ $course->price_currency }}</td>
