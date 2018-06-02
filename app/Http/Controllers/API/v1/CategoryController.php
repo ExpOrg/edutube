@@ -41,7 +41,7 @@ class CategoryController extends Controller
     protected function show(Request $request)
     {
         $category = Category::findBySlug($request->id);
-        $courses = $category->courses()->select('title', 'image', 'course_id')->get();
+        $courses = $category->courses()->select('title', 'image', 'course_id', 'courses.id')->get();
         return response()->json(['success' => true, 'category' => $category, 'courses' => $courses]);
     }
 }

@@ -21,14 +21,14 @@ class CourseController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api')->except(['details', 'search']);
+        $this->middleware('auth:api')->except(['details', 'search', 'related_course']);
     }
 
     /**
-     * Get user education lists.
+     * Get user course lists.
      *
      * @param  none
-     * @return Array education
+     * @return Array course
      */
     protected function index()
     {
@@ -37,10 +37,10 @@ class CourseController extends Controller
     }
 
     /**
-     * Get user education lists.
+     * Get user course lists.
      *
      * @param  none
-     * @return Array education
+     * @return Array course
      */
     protected function show(Request $request)
     {
@@ -56,10 +56,24 @@ class CourseController extends Controller
      */
     protected function search(Request $request)
     {
-        DB::enableQueryLog();
-        $term = $request->term;
-        $course = Course::leftJoin('subjects', 'courses.subject_id', '=', 'subjects.id')->leftJoin('classes', 'courses.class_id', '=', 'classes.id')->where("subjects.title", 'like', '%' . $term . '%')->orWhere("classes.name", 'like', '%' . $term . '%')->get();
-        return response()->json(['success' => true, 'courses' => $course]);
+      DB::enableQueryLog();
+      $courses = array();
+      $price_filter = $request->price_filter;
+      $search_courses = Course::search($request);
+      foreach($search_courses as $course) {
+        $user = $course->user()->get()->first();
+        $course_details = array('id' => $course->id, 'title' => $course->title, 'user' => "$user->first_name $user->last_name", 'price' => $course->price, 'image' => $course->image, 'price_currency' => $course->price_currency, 'discount_price' => $course->discount_price);
+        if($price_filter == 'paid' && $course->price > 0) {
+          $courses[] = $course_details;
+        }
+        else if($price_filter == 'free' && ($course->price <= 0 || $course->price == null)) {
+          $courses[] = $course_details;
+        }
+        else if($price_filter == 'all' || !$price_filter) {
+          $courses[] = $course_details;
+        }
+      }
+      return response()->json(['success' => true, 'courses' => $courses]);
     }
 
     /**
@@ -72,17 +86,34 @@ class CourseController extends Controller
     {
         $category = null;
         $course = Course::find($request->id);
-        $related_course = Course::where('class_id', $course->class_id)
-            ->where('subject_id', $course->subject_id)
-            ->where('id','!=', $course->id)->get();
         $user = $course->user()->get();
         if($request->category) {
           $category = Category::findBySlug($request->category);
         }
-        return response()->json(['success' => true, 'course' => $course, 'user' => $user, 'category' => $category, 'related_course' => $related_course]);
+        return response()->json(['success' => true, 'course' => $course, 'user' => $user, 'category' => $category]);
     }
 
-	/**
+    /**
+    * Get related course of a course 
+    * @param course_id as id
+    * @return Array of course
+    */
+    public function related_course(Request $request) {
+      $course = Course::find($request->id);
+      $courses = array();
+      $related_course = Course::where('class_id', $course->class_id)
+            //->where('subject_id', $course->subject_id)
+            ->where('id','!=', $course->id)->get();
+
+      foreach($related_course as $course) {
+          $user = $course->user()->get()->first();
+          $course_details = array('id' => $course->id, 'title' => $course->title, 'user' => "$user->first_name $user->last_name", 'price' => $course->price, 'image' => $course->image, 'price_currency' => $course->price_currency, 'discount_price' => $course->discount_price);
+          $courses[] = $course_details;
+        }
+      return response()->json(['success' => true, 'related_course' => $courses]);
+    }
+
+	  /**
      * Get a validator for an incoming registration request.
      *
      * @param  array  $data
