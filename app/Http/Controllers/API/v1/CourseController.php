@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Course;
 use App\Models\Category;
+use App\Models\Subject;
+use App\Models\Klass;
+use DB;
 
 class CourseController extends Controller
 {
@@ -17,7 +20,7 @@ class CourseController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api')->except(['details']);
+        $this->middleware('auth:api')->except(['details', 'search']);
     }
 
     /**
@@ -45,6 +48,20 @@ class CourseController extends Controller
     }
 
     /**
+     * Search course by class, subject or title.
+     *
+     * @param  search term
+     * @return Array courses
+     */
+    protected function search(Request $request)
+    {
+        DB::enableQueryLog();
+        $term = $request->term;
+        $course = Course::leftJoin('subjects', 'courses.subject_id', '=', 'subjects.id')->leftJoin('classes', 'courses.class_id', '=', 'classes.id')->where("subjects.title", 'like', '%' . $term . '%')->orWhere("classes.name", 'like', '%' . $term . '%')->get();
+        return response()->json(['success' => true, 'courses' => $course]);
+    }
+
+    /**
      * Get course details user.
      *
      * @param  course id
@@ -52,9 +69,13 @@ class CourseController extends Controller
      */
     protected function details(Request $request)
     {
+        $category = null;
         $course = Course::find($request->id);
         $user = $course->user()->get()->first();
-        return response()->json(['success' => true, 'course' => $course, 'user' => $user]);
+        if($request->category) {
+          $category = Category::findBySlug($request->category);
+        }
+        return response()->json(['success' => true, 'course' => $course, 'user' => $user, 'category' => $category]);
     }
 
 	/**
@@ -106,7 +127,7 @@ class CourseController extends Controller
       $course_id = $request->id;
       $category = Category::find($request->category_id);
       $course = Course::find($course_id);
-      $category->courses()->sync($course_id);
+      $category->courses()->attach($course_id);
       return response()->json(['success' => true]);
     }
 
@@ -127,17 +148,19 @@ class CourseController extends Controller
     }
 
     /*
-    * Load category of a course
+    * Load course data category, classes, subject etc.
     * @params course_id
     *
-    * @return Category array
+    * @return Data array
     */
 
-    public function get_categories(Request $request) {
+    public function edit(Request $request) {
       $course = Course::find($request->id);
       $categories = Category::select('title', 'id')->get();
       $course_categories = $course->categories()->select('title', 'categories.id')->get();
-      return response()->json(['success' => true, 'categories' => $categories, 'course_categories' => $course_categories]);
+      $classes = Klass::all();
+      $subjects = Subject::all();
+      return response()->json(['success' => true, 'categories' => $categories, 'course_categories' => $course_categories, 'klasses' => $classes, 'subjects' => $subjects]);
     }
 
     /*

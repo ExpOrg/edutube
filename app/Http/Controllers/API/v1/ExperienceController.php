@@ -54,7 +54,7 @@ class ExperienceController extends Controller
     public function create(Request $request) {
       $validate = $this->validator($request->all());
       if($validate->fails()) {
-        return response()->json(['success' => false, 'message' => "Validation error", 'errors' => $validate->errors()]);
+        return response()->json(['success' => false, 'message' => "Validation error! Please fill the required field.", 'errors' => $validate->errors()]);
       } 
       else {
         $user = auth()->user();
@@ -79,7 +79,7 @@ class ExperienceController extends Controller
     public function update(Request $request) {
       $validate = $this->validator($request->all());
       if($validate->fails()) {
-        return response()->json(['success' => false, 'message' => "Validation error", 'errors' => $validate->errors()]);
+        return response()->json(['success' => false, 'message' => "Validation error! Please fill the required field.", 'errors' => $validate->errors()]);
       } 
       else {
         $experience = Experience::find($request->id);

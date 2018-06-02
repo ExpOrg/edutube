@@ -52,7 +52,7 @@ class LoginController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
+            'first_name' => 'required|string|max:128',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
@@ -65,7 +65,7 @@ class LoginController extends Controller
     public function social_login(Request $request) {
         $user = Authorization::find_auth_user($request->id, $request->email);
         if(!$user) {
-          $user_data = $request->only('name', 'email');
+          $user_data = $request->only('first_name', 'last_name', 'email');
           $user_data['password'] = '369258741';
           $user_data['password_confirmation'] = '369258741';
           $validation = $this->validator($user_data);

@@ -36,6 +36,7 @@ Route::group([
     Route::post('register', 'Auth\RegisterController@register');
     Route::post('recover', 'Auth\ForgotPasswordController@recover');
     Route::post('refresh', 'Auth\RegisterController@refresh');
+    Route::get('courses', 'Auth\RegisterController@getCourses');
     Route::get('me', 'Auth\LoginController@me');
     Route::post('update_profile', 'API\v1\UserController@update_profile');
     Route::post('upload_avatar', 'API\v1\UserController@upload_avatar');
@@ -56,7 +57,8 @@ Route::group([
     Route::post('courses/{id}/upload_file', 'API\v1\CourseController@upload_file');
     Route::post('courses/{id}/add_category', 'API\v1\CourseController@add_category');
     Route::post('courses/{id}/remove_category', 'API\v1\CourseController@remove_category');
-    Route::get('courses/{id}/categories', 'API\v1\CourseController@get_categories');
+    Route::get('courses/{id}/edit_course', 'API\v1\CourseController@edit');
+    Route::get('search', 'API\v1\CourseController@search');
 
     //################### EXPERIENCE ROUTES ############################
 

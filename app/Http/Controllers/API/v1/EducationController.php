@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Education;
+use App\User;
 
 class EducationController extends Controller
 {
@@ -29,7 +30,8 @@ class EducationController extends Controller
     protected function index()
     {
         $user = auth()->user();
-        return response()->json(['success' => true, 'educations' => $user->educations()->get()]);
+        $institutions = User::whereNotNull('institution')->select('institution')->distinct()->get();
+        return response()->json(['success' => true, 'educations' => $user->educations()->get(), 'institutions' => $institutions]);
     }
 
 	/**
@@ -54,7 +56,7 @@ class EducationController extends Controller
     public function create(Request $request) {
       $validate = $this->validator($request->all());
       if($validate->fails()) {
-        return response()->json(['success' => false, 'message' => "Validation error", 'errors' => $validate->errors()]);
+        return response()->json(['success' => false, 'message' => "Validation error! Please fill the required field.", 'errors' => $validate->errors()]);
       } 
       else {
         $user = auth()->user();
@@ -79,7 +81,7 @@ class EducationController extends Controller
     public function update(Request $request) {
       $validate = $this->validator($request->all());
       if($validate->fails()) {
-        return response()->json(['success' => false, 'message' => "Validation error", 'errors' => $validate->errors()]);
+        return response()->json(['success' => false, 'message' => "Validation error! Please fill the required field.", 'errors' => $validate->errors()]);
       } 
       else {
         $education = Education::find($request->id);

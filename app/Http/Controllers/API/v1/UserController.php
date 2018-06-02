@@ -35,6 +35,18 @@ class UserController extends Controller
         }
     }
 
+    /*
+    * Get courses created by an user
+    * @input user auth
+    * @return Course list as Array
+    */
+
+    public function getCourses() {
+      $user = auth()->user();
+      $courses = $user->courses();
+       return response()->json(['success' => true, 'message' => "Load courses", 'courses' => $courses]);
+    }
+
     /**
      * Upload user avatar.
      *
