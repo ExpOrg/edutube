@@ -70,7 +70,7 @@ class UserBankAccountController extends Controller
     public function update(Request $request) {
         $validate = $this->validator($request->all());
         if($validate->fails()) {
-            return response()->json(['success' => false, 'message' => "Validation error", 'errors' => $validate->errors()]);
+            return response()->json(['success' => false, 'message' => "Data validation failed! Please fill the required fields", 'errors' => $validate->errors()]);
         }
         else {
             $user = auth()->user();
@@ -97,10 +97,7 @@ class UserBankAccountController extends Controller
 
     public function show(Request $request) {
        $bank_account = auth()->user()->user_bank_account()->get()->first();
-       if($bank_account == NULL) {
-         $bank_account = new BankAccount();
-	}
-        return response()->json(['success' => true, 'message' => 'load bank account!', 'bank_account' => $bank_account]);
+       return response()->json(['success' => true, 'message' => 'load bank account!', 'bank_account' => $bank_account]);
     }
 
 }
