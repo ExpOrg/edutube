@@ -3,6 +3,7 @@
 namespace App\Admin\Controllers;
 
 use App\User;
+use App\Models\UserBankAccount;
 
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -89,12 +90,22 @@ class UserController extends Controller
             $grid->paginate(20);
 
             $grid->id('ID')->sortable();
-            $grid->name();
+            $grid->first_name();
+            $grid->last_name();
             $grid->email();
             $grid->user_type();
             $grid->country();
             $grid->city();
             $grid->phone();
+            $grid->column('Account')->display(function () {
+                $account = $this->user_bank_account()->get()->first();
+                if($account){
+                    return "<a href=\"/admin/bank_accounts/{$account->id}\">View Account</a>";
+
+                }else{
+                    return 'No Account';
+                }
+            });
 
             $grid->filter(function (Grid\Filter $filter) {
                 $filter->equal('name');
@@ -120,7 +131,8 @@ class UserController extends Controller
         return Admin::form(User::class, function (Form $form) {
 
             $form->model()->makeVisible('password');
-            $form->text('name')->rules('required');
+            $form->text('first_name')->rules('required');
+            $form->text('last_name')->rules('required');
             $form->select('user_type')->options(['student' => 'Student', 'teacher' => 'Teacher'])->rules('required');
             $form->email('email')->rules('required');
             $form->password('password')->rules('required|confirmed')
