@@ -42,7 +42,7 @@ class Course extends Model
         $subject = $request->subject_name;
         $category = $request->category_id;
 
-        $search_courses = Course::join('subjects', 'courses.subject_id', '=', 'subjects.id')->join('classes', 'courses.class_id', '=', 'classes.id');
+        $search_courses = Course::leftJoin('subjects', 'courses.subject_id', '=', 'subjects.id')->leftJoin('classes', 'courses.class_id', '=', 'classes.id');
 
         if($category) {
           $search_courses = $search_courses->join('category_course', 'courses.id', '=', 'category_course.course_id')->where('category_course.category_id', '=', $category);

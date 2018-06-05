@@ -98,14 +98,45 @@ class CourseController extends Controller
 
             });
 
+            $grid->column('Class')->display(function() {
+                if($this->class_id == NULL || $this->klass == NULL) {
+                  return 'N/A';
+                }
+                else {
+                  return "<a href=\"/admin/classes/{$this->class_id}\">{$this->klass->name} </a>";                    
+                }
+            });
+
+            $grid->column('Subject')->display(function() {
+                if($this->subject_id == NULL || $this->subject == NULL) {
+                  return 'N/A';
+                }
+                else {
+                  return "<a href=\"/admin/subjects/{$this->subject_id}\">{$this->subject->title} </a>";                    
+                }
+            });
+
+            $grid->column('Status')->display(function() {
+                if($this->status == NULL) {
+                  return 'Draft';
+                }
+                else {
+                  return $this->status;                    
+                }
+            });
+
             $grid->created_at()->date_format()->sortable();
+
+            $grid->column('')->display(function() {
+                return "<a href=\"http://www.siteedutube.xyz/courses/{$this->id}\" target='_blank'>
+                 Web View </a>";
+            }); 
 
             $grid->filter(function (Grid\Filter $filter) {
                 $filter->equal('title');
                 $filter->equal('sub_title');
                 $filter->between('created_at')->datetime();
                 $filter->between('updated_at')->datetime();
-
             });
 
         });
