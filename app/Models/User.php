@@ -70,4 +70,9 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->hasMany('App\Blog', 'user_id');
     }
+
+    public function user_bank_account()
+    {
+        return $this->hasOne('App\Models\UserBankAccount', 'user_id');
+    }
 }

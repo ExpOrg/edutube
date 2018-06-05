@@ -76,6 +76,12 @@ Route::group([
     //################### CATEGORY ROUTES ############################
     Route::get('categories', 'API\v1\CategoryController@index');
     Route::get('categories/{id}', 'API\v1\CategoryController@show');
+
+    //################### USER BANK ACCOUNT ROUTES ############################
+    Route::post('bank_account/update', 'API\v1\UserBankAccountController@update');
+    Route::get('bank_account', 'API\v1\UserBankAccountController@show');
+
+
 });
 
 // Route::group([

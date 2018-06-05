@@ -18,4 +18,5 @@ Route::group([
     $router->resource('subjects', SubjectController::class);
     $router->resource('courses', CourseController::class);
     $router->resource('classes', KlassesController::class);
+    $router->resource('bank_accounts', UserBankAccountController::class);
 });
