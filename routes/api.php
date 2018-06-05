@@ -59,12 +59,19 @@ Route::group([
     Route::post('courses/{id}/remove_category', 'API\v1\CourseController@remove_category');
     Route::get('courses/{id}/edit_course', 'API\v1\CourseController@edit');
     Route::get('search', 'API\v1\CourseController@search');
+    Route::get('courses/{id}/related_course', 'API\v1\CourseController@related_course');
 
     //################### EXPERIENCE ROUTES ############################
 
     Route::get('experiences', 'API\v1\ExperienceController@index');
     Route::post('experience/create', 'API\v1\ExperienceController@create');
     Route::post('experience/{id}/update', 'API\v1\ExperienceController@update');
+
+    //################### EXPERIENCE ROUTES ############################
+
+    Route::get('languages', 'API\v1\LanguageController@index');
+    Route::post('language/create', 'API\v1\LanguageController@create');
+    Route::post('language/{id}/update', 'API\v1\LanguageController@update');
 
     //################### CATEGORY ROUTES ############################
     Route::get('categories', 'API\v1\CategoryController@index');

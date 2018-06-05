@@ -36,4 +36,29 @@ class Course extends Model
         return $this->belongsToMany('App\Models\Category');
     }
 
+    public static function search($request) {
+        $term = $request->term;
+        $class = $request->class_name;
+        $subject = $request->subject_name;
+        $category = $request->category_id;
+
+        $search_courses = Course::join('subjects', 'courses.subject_id', '=', 'subjects.id')->join('classes', 'courses.class_id', '=', 'classes.id');
+
+        if($category) {
+          $search_courses = $search_courses->join('category_course', 'courses.id', '=', 'category_course.course_id')->where('category_course.category_id', '=', $category);
+        }
+
+        if($term) {
+          $search_courses = $search_courses->where("subjects.title", 'like', '%' . $term . '%')->orWhere("classes.name", 'like', '%' . $term . '%');
+        }
+        else {
+          if($class) {
+            $search_courses = $search_courses->where("classes.name", 'like', '%' . $class . '%');
+          }
+          if($subject) {
+            $search_courses = $search_courses->where("subjects.title", 'like', '%' . $subject . '%');
+          }
+        }
+        return $search_courses->select('courses.*')->distinct()->get();
+    }
 }
