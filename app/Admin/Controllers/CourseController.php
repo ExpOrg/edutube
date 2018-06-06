@@ -2,6 +2,7 @@
 
 namespace App\Admin\Controllers;
 
+use App\Models\Category;
 use App\Models\Course;
 use App\Models\Subject;
 use App\Models\Klass;
@@ -126,6 +127,7 @@ class CourseController extends Controller
             $form->select('user_id', 'User')->options(User::selectRaw('id, CONCAT(first_name," ",last_name) as full_name')->pluck('full_name', 'id'));
             $form->select('class_id', 'Class')->options(Klass::all()->pluck('name', 'id'));
             $form->select('subject_id', 'Subject')->options(Subject::all()->pluck('title', 'id'));
+            $form->multipleSelect('categories', 'Categories')->options(Category::all()->pluck('title', 'id'));
             $form->text('language');
             $form->text('price_currency');
             $form->number('price');

@@ -30,9 +30,9 @@ class Category extends Model
         'image','title', 'description'
     ];
 
-    public function courses()
+    public function categories()
     {
-        return $this->belongsToMany('App\Models\Course');
+        return $this->belongsToMany('App\Models\Course', 'category_course', 'category_id', 'course_id');
     }
 
 }

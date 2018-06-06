@@ -33,8 +33,9 @@ class Course extends Model
 
     public function categories()
     {
-        return $this->belongsToMany('App\Models\Category');
+        return $this->belongsToMany('App\Models\Category', 'category_course', 'course_id', 'category_id');
     }
+
 
     public static function search($request) {
         $term = $request->term;
