@@ -28,11 +28,11 @@
                                 </tr>
                                 <tr>
                                     <td>Class:</td>
-                                    <td>{{ $course->klass->name }}</td>
+                                    <td>{{ $course->klass == NULL ? 'N/A' : $course->klass->name }}</td>
                                 </tr>
                                 <tr>
                                     <td>Subject:</td>
-                                    <td>{{ $course->subject->title }}</td>
+                                    <td>{{ $course->subject == NULL ? 'N/A' : $course->subject->title }}</td>
                                 </tr>
                                 <tr>
                                     <td>Status:</td>

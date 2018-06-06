@@ -70,18 +70,34 @@ class UserBankAccountController extends Controller
     public function update(Request $request) {
         $validate = $this->validator($request->all());
         if($validate->fails()) {
-            return response()->json(['success' => false, 'message' => "Validation error", 'errors' => $validate->errors()]);
+            return response()->json(['success' => false, 'message' => "Data validation failed! Please fill the required fields", 'errors' => $validate->errors()]);
         }
         else {
-            $bank_account = UserBankAccount::find($request->id);
-            $bank_account = $bank_account->fill($request->all());
+            $user = auth()->user();
+            $bank_account = auth()->user()->user_bank_account()->get()->first();
+            $account_params = $request->all();
+            if($bank_account == NULL) {
+              $bank_account = new UserBankAccount();  
+              $account_params['user_id'] = $user->id;
+            }
+            $bank_account = $bank_account->fill($account_params);
             if($bank_account->save()) {
-                return response()->json(['success' => true, 'message' => 'Course has been updated!', 'course' => $bank_account]);
+                return response()->json(['success' => true, 'message' => 'Bank account has been updated!', 'bank_account' => $bank_account]);
             }
             else {
-                return response()->json(['success' => false, 'message' => "Unable to update course"]);
+                return response()->json(['success' => false, 'message' => "Unable to update bank account"]);
             }
         }
+    }
+
+   /*
+    * Update user_bank_account
+    * @return updated data
+    */
+
+    public function show(Request $request) {
+       $bank_account = auth()->user()->user_bank_account()->get()->first();
+       return response()->json(['success' => true, 'message' => 'load bank account!', 'bank_account' => $bank_account]);
     }
 
 }
