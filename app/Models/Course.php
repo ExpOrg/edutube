@@ -17,7 +17,7 @@ class Course extends Model
         'status', 'tools_required', 'who_can_take', 'achivement', 'image', 
         'promo_video', 'price_currency', 'price', 'discount_currency',
         'discount_price', 'welcome_message', 'congratulation_message', 'privacy',
-        'google_tracking_id', 'google_adwards', 'class_id', 'subject_id'
+        'google_tracking_id', 'google_adwards', 'class_id', 'subject_id', 'is_paid'
     ];
 
     public function user() {
@@ -40,7 +40,7 @@ class Course extends Model
     public static function search($request) {
         $term = $request->term;
         $class = $request->class_name;
-        $subject = $request->subject_name;
+        $subject = $request->subject;
         $category = $request->category_id;
 
         $search_courses = Course::leftJoin('subjects', 'courses.subject_id', '=', 'subjects.id')->leftJoin('classes', 'courses.class_id', '=', 'classes.id');

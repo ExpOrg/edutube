@@ -35,4 +35,9 @@ class Category extends Model
         return $this->belongsToMany('App\Models\Course', 'category_course', 'category_id', 'course_id');
     }
 
+    public function courses()
+    {
+        return $this->belongsToMany('App\Models\Course', 'category_course', 'category_id', 'course_id');
+    }
+
 }
