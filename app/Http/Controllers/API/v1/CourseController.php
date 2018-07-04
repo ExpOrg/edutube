@@ -21,7 +21,7 @@ class CourseController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api')->except(['details', 'search', 'related_course']);
+        $this->middleware('auth:api')->except(['details', 'search', 'related_course', 'top_courses']);
     }
 
     /**
@@ -111,6 +111,20 @@ class CourseController extends Controller
           $courses[] = $course_details;
         }
       return response()->json(['success' => true, 'related_course' => $courses]);
+    }
+
+
+    /**
+     * Get random 5, first 5 and last 5 courses
+     *
+     * @param  array  $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    public function top_courses(){
+        $random_courses = Course::inRandomOrder()->limit(5)->get();
+        $latest_courses = Course::orderBy('id', 'desc')->take(5)->get();
+        $top_shared_courses = Course::orderBy('id', 'asc')->take(5)->get();
+        return response()->json(['success' => true, 'random_courses' => $random_courses, 'latest_courses' => $latest_courses, 'top_shared_courses' => $top_shared_courses]);
     }
 
 	  /**

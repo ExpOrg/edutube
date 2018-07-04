@@ -60,6 +60,7 @@ Route::group([
     Route::get('courses/{id}/edit_course', 'API\v1\CourseController@edit');
     Route::get('search', 'API\v1\CourseController@search');
     Route::get('courses/{id}/related_course', 'API\v1\CourseController@related_course');
+    Route::get('top_courses', 'API\v1\CourseController@top_courses');
 
     //################### EXPERIENCE ROUTES ############################
 
