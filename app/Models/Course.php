@@ -31,11 +31,14 @@ class Course extends Model
         return $this->belongsTo('App\Models\Klass', 'class_id');
     }
 
+    public function lectures() {
+        return $this->hasMany('App\Models\Lecture');
+    }
+
     public function categories()
     {
         return $this->belongsToMany('App\Models\Category', 'category_course', 'course_id', 'category_id');
     }
-
 
     public static function search($request) {
         $term = $request->term;

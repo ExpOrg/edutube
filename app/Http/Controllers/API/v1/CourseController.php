@@ -9,6 +9,7 @@ use App\Models\Course;
 use App\Models\Category;
 use App\Models\Subject;
 use App\Models\Klass;
+use App\Models\Lecture;
 use App\User;
 use DB;
 
@@ -121,10 +122,10 @@ class CourseController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     public function top_courses(){
-        $random_courses = Course::inRandomOrder()->limit(5)->get();
-        $latest_courses = Course::orderBy('id', 'desc')->take(5)->get();
-        $top_shared_courses = Course::orderBy('id', 'asc')->take(5)->get();
-        return response()->json(['success' => true, 'random_courses' => $random_courses, 'latest_courses' => $latest_courses, 'top_shared_courses' => $top_shared_courses]);
+        $random_courses = Course::inRandomOrder()->limit(10)->get();
+        $latest_courses = Course::orderBy('id', 'desc')->take(10)->get();
+        $top_shared_courses = Course::orderBy('id', 'asc')->take(10)->get();
+        return response()->json(['success' => true, 'top_view' => $random_courses, 'latest_upload' => $latest_courses, 'top_shared' => $top_shared_courses]);
     }
 
 	  /**
@@ -273,5 +274,48 @@ class CourseController extends Controller
             return response()->json(['success' => false, 'message' => "Unable to upload $upload_type"]);
           }
         }
+    }
+
+    /* COURSE LECTURE SECTION */
+
+    /**
+    * get all lecture of a course
+    *
+    * @return lectures as array
+    */
+    public function lectures(Request $request) {
+      $course = Course::find($request->course_id);
+      return response()->json(['success' => true, 'message' => "Lecture loaded!", 'lectures' => $course->lectures()->get()]);
+    }
+
+    /**
+    * Update or create lecture.
+    *
+    * @return lecture data
+    */
+    public function update_lecture(Request $request) {
+      $lecture = new Lecture();
+      if($request->id) {
+        $lecture = Lecture::find($request->id);
+      }
+      $validator = Validator::make(array('title' => $request->title), [
+            'title' => 'required|string'
+        ]);
+      if($validator->fails()) {
+        return response()->json(['success' => false, 'message' => "Validation failed! Check the required field"]);
+      }
+      else {
+        $lecture->title = $request->title;
+        $lecture->description = $request->description;
+        $lecture->content_url = $lecture->uploadContent($request);
+        $lecture->content_type = 'pdf';
+        $lecture->course_id = $request->course_id;
+        if($lecture->save()) {
+          return response()->json(['success' => true, 'message' => "Lecture saved!", 'lecture' => $lecture]);
+        }
+        else {
+          return response()->json(['success' => false, 'message' => "Something wrong! Please try again"]);
+        }
+      }
     }
 }

@@ -62,6 +62,11 @@ Route::group([
     Route::get('courses/{id}/related_course', 'API\v1\CourseController@related_course');
     Route::get('top_courses', 'API\v1\CourseController@top_courses');
 
+    //################# COURSE LECTURE #########################
+
+    Route::post('courses/{course_id}/update_lecture', 'API\v1\CourseController@update_lecture');
+    Route::get('courses/{course_id}/lectures', 'API\v1\CourseController@lectures');
+
     //################### EXPERIENCE ROUTES ############################
 
     Route::get('experiences', 'API\v1\ExperienceController@index');
@@ -81,7 +86,6 @@ Route::group([
     //################### USER BANK ACCOUNT ROUTES ############################
     Route::post('bank_account/update', 'API\v1\UserBankAccountController@update');
     Route::get('bank_account', 'API\v1\UserBankAccountController@show');
-
 
 });
 
