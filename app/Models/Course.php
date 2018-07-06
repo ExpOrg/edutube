@@ -40,6 +40,12 @@ class Course extends Model
         return $this->belongsToMany('App\Models\Category', 'category_course', 'course_id', 'category_id');
     }
 
+    public function assessments()
+    {
+        return $this->morphMany('App\Models\Assessment', 'assessmentable');
+    }
+
+
     public static function search($request) {
         $term = $request->term;
         $class = $request->class_name;

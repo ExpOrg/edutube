@@ -37,4 +37,9 @@ class Lecture extends Model
     public function course() {
       return $this->belongsTo('App\Models\Course');
     }
+
+    public function assessments()
+    {
+        return $this->morphMany('App\Models\Assessment', 'assessmentable');
+    }
 }
