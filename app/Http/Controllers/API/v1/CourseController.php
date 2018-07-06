@@ -91,7 +91,7 @@ class CourseController extends Controller
         if($request->category) {
           $category = Category::findBySlug($request->category);
         }
-        return response()->json(['success' => true, 'course' => $course, 'user' => $user, 'category' => $category]);
+        return response()->json(['success' => true, 'course' => $course, 'user' => $user, 'category' => $category, 'lectures' => $course->lectures()->get()]);
     }
 
     /**
@@ -237,6 +237,27 @@ class CourseController extends Controller
     }
 
     /**
+    * Delete course by id
+    *
+    */
+
+    public function delete(Request $request) {
+      $user = auth()->user();
+      $course = Course::find($request->id);
+      if($course->user_id == $user->id) {
+        if($course->delete()) {
+          return response()->json(['success' => true, 'message' => "success"]);
+        } 
+        else {
+          return response()->json(['success' => false, 'message' => "Unable to delete this course!"]);
+        }
+      }
+      else {
+        return response()->json(['success' => false, 'message' => "Course delete, Access denied!"]);
+      }
+    }
+
+    /**
      * Upload course file image or video.
      *
      * @return \Illuminate\Http\Response
@@ -246,21 +267,21 @@ class CourseController extends Controller
         $upload_type = $request->upload_type;
         if($upload_type == 'image') {
             $this->validate($request, [
-                      'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-                    ]);
+              'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            ]);
         }
         else {
             $this->validate($request, [
-                      'file' => 'required|image|mimes:mp4,mpeg,mp3,mov|max:500048',
-                    ]);
+              'file' => 'required|mimes:mp4,mpeg,mp3,mov|max:500048'
+            ]);
         }
 
         if ($request->hasFile('file')) {
           $image = $request->file('file');
           $name = time().'.'.$image->getClientOriginalExtension();
-          $destinationPath = public_path('/upload/courses/');
+          $destinationPath = public_path('/uploads/courses/');
           $image->move($destinationPath, $name);
-          $file_path = '/upload/courses/'.$name;
+          $file_path = '/uploads/courses/'.$name;
           if($upload_type == 'image') {
             $course->fill(['image' => $file_path]);
           }

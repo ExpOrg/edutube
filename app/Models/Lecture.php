@@ -14,15 +14,20 @@ class Lecture extends Model
     protected $fillable = ['title', 'description', 'course_id', 'content_url', 'resourse', 'content_type'];
 
     public function uploadContent($request) {
-      $course_id = $request->id;
-      print_r($request->file('file'));
-      die(); 
+      $course_id = $request->course_id;
+      $upload = $request->upload;
       if ($request->hasFile('file')) {
-          $image = $request->file('file');
-          $name = time().'.'.$image->getClientOriginalExtension();
-          $destinationPath = public_path("/uploads/courses/" + $course_id + "/lecture/");
-          $image->move($destinationPath, $name);
-          return "/uploads/courses/" + $course_id + "/lecture/".$name;
+          $file = $request->file;
+          $file_name = $request->file('file')->getClientOriginalName();
+          if($file_name) {
+            $name = time().'_'.$file_name;
+          }
+          else {
+            $name = time().'.'.$file->getClientOriginalExtension();
+          }
+          $destinationPath = public_path("/uploads/courses/" . $course_id . "/lecture/");
+          $file->move($destinationPath, $name);
+          return "/uploads/courses/" . $course_id . "/lecture/".$name;
       }
       else {
       	return $request->content_url;
