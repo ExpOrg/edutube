@@ -68,6 +68,12 @@ Route::group([
     Route::post('courses/{course_id}/update_lecture', 'API\v1\CourseController@update_lecture');
     Route::get('courses/{course_id}/lectures', 'API\v1\CourseController@lectures');
 
+    //################# COURSE LECTURE ASSESMENT ################
+
+    Route::get('lectures/{lecture_id}/assessments', 'API\v1\AssessmentController@index');
+    Route::post('lectures/{lecture_id}/update_assessment', 'API\v1\AssessmentController@update');
+    Route::post('lecture/assessment/{assessment_id}/update_question', 'API\v1\AssessmentController@update_question');
+
     //################### EXPERIENCE ROUTES ############################
 
     Route::get('experiences', 'API\v1\ExperienceController@index');
