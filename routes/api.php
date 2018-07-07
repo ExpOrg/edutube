@@ -67,6 +67,7 @@ Route::group([
 
     Route::post('courses/{course_id}/update_lecture', 'API\v1\CourseController@update_lecture');
     Route::get('courses/{course_id}/lectures', 'API\v1\CourseController@lectures');
+    Route::get('courses/{course_id}/lectures/{id}', 'API\v1\CourseController@lecture');
 
     //################# COURSE LECTURE ASSESMENT ################
 

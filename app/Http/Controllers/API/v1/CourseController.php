@@ -310,6 +310,17 @@ class CourseController extends Controller
     }
 
     /**
+    * get lecture by id
+    *
+    * @return lecture as JSON
+    */
+    public function lecture(Request $request) {
+      $course = Course::find($request->course_id);
+      $lecture = Lecture::find($request->id);
+      return response()->json(['success' => true, 'message' => "Lecture loaded!", 'lecture' => $lecture]);
+    }
+
+    /**
     * Update or create lecture.
     *
     * @return lecture data
