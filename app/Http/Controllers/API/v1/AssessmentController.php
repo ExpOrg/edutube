@@ -41,7 +41,7 @@ class AssessmentController extends Controller
         $assessment = new Assessment();
         $assessment->assessmentable_id = $request->lecture_id;
       }
-      return response()->json(['success' => true, 'assesment' => $assessment->with('questions', 'questions.answers')->get()]);
+      return response()->json(['success' => true, 'assessment' => Assessment::with('questions', 'questions.answers')->where('id', $assessment->id)->first()]);
     }
 
 	  /**
