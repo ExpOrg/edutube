@@ -87,7 +87,8 @@ class CourseController extends Controller
     {
         $category = null;
         $course = Course::find($request->id);
-        $user = $course->user()->get();
+        $user = $course->user()->get()->first();
+
         if($request->category) {
           $category = Category::findBySlug($request->category);
         }
